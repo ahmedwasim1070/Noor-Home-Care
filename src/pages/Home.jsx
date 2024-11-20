@@ -1,15 +1,14 @@
 import React from "react";
 import Header from "../component/header";
-import Navbar from "../component/Navbar";
 import Hero from "../component/Hero";
+import About from "../component/About";
 
 function home() {
   return (
-    <div className=" container mx-auto">
+    <div>
       <Header />
-      <hr className=" mx-auto my-2 font-bold border-[rgba(0,0,0,0.3)]" />
-      <Navbar />
       <Hero />
+      <About />
     </div>
   );
 }

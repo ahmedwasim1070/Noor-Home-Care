@@ -4,10 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        textColor: "#2C4E80",
-        primaryColor: "#FC4100",
-        secondaryColor: "#00215E",
-        labelColor: "#FFC55A",
+        primaryColor: "#432E54",
+        secondaryColor: "#E4508F",
       },
     },
   },
