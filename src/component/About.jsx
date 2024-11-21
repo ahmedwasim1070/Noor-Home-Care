@@ -3,8 +3,8 @@ import React from "react";
 function About() {
   return (
     <section>
-      <div className="w-full h-[1000px] flex justify-center items-center ">
-        <div className="w-[1000px] h-[600px] flex flex-col gap-y-10">
+      <div className="w-full h-[600px] flex justify-center items-center">
+        <div className=" w-[60%] flex flex-col gap-y-10">
           <p className="text-[48px] text-primaryColor font-bold">About Us</p>
           <article className="text-[24px]">
             At Noor Home Care, we are committed to providing the care and
@@ -21,6 +21,11 @@ function About() {
             independence and comfort in their own homes, offering personalized
             assistance throughout the day.
           </h3>
+        </div>
+      </div>
+      <div className="w-full flex justify-center">
+        <div className="w-[900px] h-[80px] bg-primaryColor rounded-[5px] flex items-center justify-center my-10">
+          <p className=" text-white text-[36px] font-bold">What We Offer</p>
         </div>
       </div>
     </section>

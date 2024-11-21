@@ -30,7 +30,7 @@ function Hero() {
       </section>
       <section className="w-full h-[150px] bg-primaryColor flex items-center justify-center ">
         <div className="w-[70%] flex flex-row items-center justify-evenly">
-          <button className="flex flex-row items-center justify-center group gap-2 transition-all duration-75 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-none">
+          <button className="flex flex-row items-center justify-center group gap-2 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
             <span>
               <svg
                 width="23"
@@ -51,7 +51,7 @@ function Hero() {
             </p>
             <h1 className="text-[24px]">07880-283423</h1>
           </button>
-          <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-75 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-none">
+          <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
             <span>
               <svg
                 className=" group-hover:fill-primaryColor group-hover:stroke-primaryColor"
@@ -72,7 +72,7 @@ function Hero() {
             </span>
             <h1 className="text-[24px]">Email Us</h1>
           </button>
-          <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-75 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-none">
+          <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
             <span>
               <svg
                 width="27"
