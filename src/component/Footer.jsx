@@ -7,13 +7,13 @@ function Footer() {
         <div className="container mx-auto px-20 flex flex-row ">
           <div className="w-[30%] p-10">
             <ul className="text-white underline flex flex-col gap-5">
-              <li>
+              <li className=" hover:text-secondaryColor ">
                 <a href="">Contact Us</a>
               </li>
-              <li>
+              <li className=" hover:text-secondaryColor ">
                 <a href="">Privacy Policy</a>
               </li>
-              <li>
+              <li className=" hover:text-secondaryColor ">
                 <a href="">Feedback</a>
               </li>
             </ul>
@@ -23,7 +23,7 @@ function Footer() {
               Become a part of our Team
             </p>
             <a
-              className="text-secondaryColor underline text-[16px] text-center"
+              className="text-secondaryColor underline text-[16px] text-center hover:text-white"
               href="#"
             >
               Criteria ?
