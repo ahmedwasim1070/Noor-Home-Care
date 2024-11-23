@@ -8,43 +8,6 @@ function Services() {
 }
 
 function Corousel() {
-  const servicesData = [
-    {
-      serviceName: "Morning Assistance",
-      serviceDes:
-        "Support with starting the day, including help with getting up, dressing, and preparing breakfast",
-    },
-    {
-      serviceName: "Medication Management",
-      serviceDes:
-        "Timely reminders or administration of medications as prescribed.",
-    },
-    {
-      serviceName: "Household Tasks",
-      serviceDes:
-        "Assistance with cleaning, laundry, and ironing to keep the home environment pleasant and organized.",
-    },
-    {
-      serviceName: "Respite Care",
-      serviceDes:
-        " Temporary relief for primary caregivers, allowing them time to recharge while their loved one is supported.",
-    },
-    {
-      serviceName: "Errands and Outings",
-      serviceDes:
-        " Help with grocery shopping, arranging outings, putting away items, and enjoying social activities such as coffee mornings or day trips.",
-    },
-    {
-      serviceName: "Evening and Bedtime Support",
-      serviceDes:
-        "Assistance with evening routines, including getting ready for bed, preparing a bedtime drink, and helping clients settle in for a restful night.",
-    },
-    {
-      serviceName: "Night Care Services",
-      serviceDes:
-        " Our night care services provide overnight assistance tailored to individual needs: Sleeping Night: Caregivers rest nearby, ready to assist as needed. Waking Night: Caregivers stay awake, offering continuous support throughout the night.",
-    },
-  ];
   return (
     <div className="w-full h-full flex items-center my-40 justify-center">
       <div className="container mx-auto p-10 bg-[#6F5E7C] rounded-2xl flex flex-row items-center justify-center overflow-x-hidden  gap-10 gap-y-20 border-black shadow-2xl shadow-primaryColor flex-wrap">
