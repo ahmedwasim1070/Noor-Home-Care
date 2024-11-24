@@ -21,8 +21,8 @@ function header() {
             />
           </div>
         </div>
-        <div className="w-[50%] h-full 2xl:flex xl:flex lg:flex md:flex sm:flex esm:hidden items-center 2xl:px-20 xl:px-16 lg:px-16 md:px-2 sm:px-0 esm:px-0 justify-end">
-          <button className="flex flex-row items-center gap-4 border-[2px] border-primaryColor px-4 py-1 text-nowrap  rounded-2xl transition-all duration-100 hover:bg-primaryColor hover:text-white group  ">
+        <div className="w-[40%] h-full 2xl:flex xl:flex lg:flex md:flex sm:flex esm:hidden items-center 2xl:px-20 xl:px-16 lg:px-16 md:px-2 sm:px-0 esm:px-0 justify-end">
+          <button className="flex flex-row items-center gap-4 border-[2px] border-primaryColor px-4 py-1 text-nowrap  rounded-2xl transition-all duration-100 hover:bg-primaryColor hover:text-white group ">
             <span className="2xl:block xl:block lg:block md:block sm:block esm:hidden">
               <svg
                 className="2xl:w-[28px] 2xl:h-[28px] xl:w-[26px] xl:h-[26px] lg:w-[25px] lg:h-[25px] md:w-[24px] md:h-[24px] sm:w-[22px] sm:h-[22px]"
@@ -42,6 +42,31 @@ function header() {
             </p>
           </button>
         </div>
+        <div className="h-full flex mx-5 items-center 2xl:hiden xl:hidden lg:hidden md:flex sm:flex esm:flex">
+          <button className="p-2 rounded-full">
+            <svg
+              className="stroke-primaryColor w-[40px] h-[40px] transition-all duration-300 hover:stroke-secondaryColor"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M4 6H20M4 12H20M4 18H20"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>
+              </g>
+            </svg>
+          </button>
+        </div>
       </div>
       <nav className="w-full h-[45px] bg-primaryColor  items-center justify-center 2xl:flex xl:flex lg:flex md:hidden sm:hidden esm:hidden">
         <ul className="2xl:w-[40%] xl:w-[42%] lg:w-[45%] h-full flex items-center justify-evenly flex-row text-white text-[20px] ">
@@ -58,6 +83,78 @@ function header() {
             <a href="#">Join Us</a>
           </li>
         </ul>
+      </nav>
+
+      <nav className=" fixed  bg-primaryColor  w-[65%] h-[100vh] top-0 right-[-65%] hidden z-[9999] p-2">
+        <div className="w-full flex justify-end px-3 py-4  ">
+          <button className="p-2 bg-secondaryColor border border-secondaryColor hover:border-white  rounded-full group hover:bg-transparent transition-all duration-300">
+            <svg
+              className="w-[32px] h-[32px] fill-primaryColor group-hover:fill-white"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <div className=" h-[50%]  flex justify-center text-white ">
+          <ul className="flex flex-col items-center justify-center gap-y-8 text-xl font-bold">
+            <li>
+              <a
+                className=" transition-all duration-300 hover:text-secondaryColor "
+                href=""
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                className=" transition-all duration-300 hover:text-secondaryColor "
+                href=""
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                className=" transition-all duration-300 hover:text-secondaryColor "
+                href=""
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                className=" transition-all duration-300 hover:text-secondaryColor "
+                href=""
+              >
+                Join Us
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="absolute bottom-4  left-0 right-0">
+          <ul className="flex flex-row justify-evenly underline text-white align-bottom">
+            <li>
+              <a className=" hover:text-secondaryColor " href="">
+                Contact-Us
+              </a>
+            </li>
+            <li>
+              <a className=" hover:text-secondaryColor " href="">
+                Feeback
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   );

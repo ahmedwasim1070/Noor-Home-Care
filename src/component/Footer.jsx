@@ -7,14 +7,20 @@ function Footer() {
         <div className="2xl:container xl:container lg:container md:container sm:container-none esm:contain-none mx-auto 2xl:px-20 xl:px-20 lg:px-10 md:px-8 sm:px-4 esm:px-2 flex flex-row flex-wrap 2xl:justify-center xl:justify-center lg:justify-center md:justify-center">
           <div className="2xl:w-[25%] xl:w-[25%] lg:w-[25%] md:w-[50%] p-10">
             <ul className="text-white underline flex flex-col gap-5">
-              <li className=" hover:text-secondaryColor ">
-                <a href="">Contact Us</a>
+              <li>
+                <a className=" hover:text-secondaryColor " href="">
+                  Contact Us
+                </a>
               </li>
-              <li className=" hover:text-secondaryColor ">
-                <a href="">Privacy Policy</a>
+              <li>
+                <a className=" hover:text-secondaryColor " href="">
+                  Privacy Policy
+                </a>
               </li>
-              <li className=" hover:text-secondaryColor ">
-                <a href="">Feedback</a>
+              <li>
+                <a className=" hover:text-secondaryColor " href="">
+                  Feedback
+                </a>
               </li>
             </ul>
           </div>
@@ -22,12 +28,14 @@ function Footer() {
             <p className=" text-white text-[14px] text-center">
               Become a part of our Team
             </p>
-            <a
-              className="text-secondaryColor underline text-[16px] text-center hover:text-white"
-              href="#"
-            >
-              Criteria ?
-            </a>
+            <li className="text-center">
+              <a
+                className="text-secondaryColor underline text-[16px] text-center hover:text-white"
+                href="#"
+              >
+                Criteria ?
+              </a>
+            </li>
             <button className=" w-[35%] p-3 bg-secondaryColor text-white mx-auto rounded-lg border border-secondaryColor text-[20px] transition-all duration-300 hover:bg-transparent hover:border hover:border-white">
               Join Us
             </button>
