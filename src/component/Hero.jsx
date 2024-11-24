@@ -3,33 +3,35 @@ import React from "react";
 function Hero() {
   return (
     <main>
-      <section className="flex flex-row">
-        <div className="w-[35.50%] h-[600px] bg-primaryColor opacity-[95%] p-20">
-          <div className="text-white">
-            <div className="w-[250px] h-[80px] bg-secondaryColor border rounded-[2px] border-primaryColor flex items-center justify-center  text-[36px] cursor-pointer  font-bold transition-all duration-500 hover:translate-x-[50px] ">
+      <section className="flex flex-row 2xl:flex-nowrap xl:flex-nowrap lg:flex-nowrap  md:flex-wrap sm:flex-wrap esm:flex-wrap relative">
+        <div className="2xl:w-[35.50%] xl:w-[35.50%] lg:w-[35.50%] md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px]  2xl:bg-primaryColor xl:bg-primaryColor lg:bg-primaryColor md:bg-gradient-to-b md:from-primaryColor/95 md:to-primaryColor sm:bg-gradient-to-b sm:from-primaryColor/95 sm:to-primaryColor esm:bg-gradient-to-b esm:from-primaryColor/95 esm:to-primaryColor 2xl:opacity-[95%] xl:opacity-[95%] lg:opacity-[95%] 2xl:p-20 xl:p-20 lg:p-16 md:p-10 sm:p-10 esm:p-10 2xl:order-1 xl:order-1 lg:order-1 md:order-2 sm:order-2 esm:order-2">
+          <div className="text-white w-full 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-[25%] sm:pl-[20%] esm:pl-0 2xl:block xl:block lg:block md:block sm:block  esm:flex esm:justify-center">
+            <div className="2xl:w-[250px] xl:w-[240px] lg:w-[220px] md:w-[250px] sm:w-[200px] esm:w-[180px] 2xl:h-[80px] xl:h-[78px] lg:h-[70px] md:h-[65px] sm:h-[65px] esm:h-[65px] bg-secondaryColor border rounded-[2px] border-primaryColor flex items-center justify-center  2xl:text-[36px] xl:text-[34px] lg:text-[28px] md:text-[22px] sm:text-[22px] esm:text-[22px] cursor-pointer  font-bold transition-all duration-500 hover:translate-x-[50px] ">
               <h2>Home Care</h2>
             </div>
           </div>
-          <div className="text-white flex justify-center">
-            <div className="w-[350px] h-[70px] bg-secondaryColor border rounded-[2px] border-primaryColor flex items-center justify-center  text-[24px]  font-bold cursor-pointer transition-all duration-500 hover:translate-x-[-50px]">
+          <div className="text-white  flex justify-center 2xl:px-0 xl:px-4 lg:px-4 md:px-6 sm:px-6">
+            <div className="2xl:w-[350px] xl:w-[340px] lg:w-[320px] md:w-[320px] sm:w-[300px] esm:w-[280px] 2xl:h-[70px] xl:h-[68px] lg:h-[60px] md:h-[60px]  sm:h-[60px] esm:h-[60px] bg-secondaryColor border rounded-[2px] border-primaryColor flex items-center justify-center  2xl:text-[24px] xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[18px] esm:text-[18px]  font-bold cursor-pointer transition-all duration-500 hover:translate-x-[-50px]">
               <h2>For Your Loved One’s</h2>
             </div>
           </div>
-          <div className="text-white flex mt-20">
-            <p className="text-[24px]">Kingston upon Hull , United Kingdom</p>
+          <div className="text-white flex 2xl:mt-20 xl:mt-20 lg:mt-20 md:mt-10  w-full 2xl:justify-start xl:justify-start lg:justify-start md:justify-center sm:justify-center sm:mt-10 esm:mt-10 esm:justify-center">
+            <p className="2xl:text-[24px] xl:text-[23px] lg:text-[22px]  md:text-[22px] sm:text-[22px] esm:text-[20px] text-center">
+              Kingston upon Hull , United Kingdom
+            </p>
           </div>
         </div>
-        <div className="w-[65.50%] h-[600px] relative">
+        <div className="2xl:w-[65.50%] xl:w-[65.50%] lg:w-[65.50%]  md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px] md:h-[350px] sm:h-[300px] esm:h-[280px] relative md:order-1">
           <img
-            className="w-full h-[600px]"
+            className="w-full h-full "
             src="nhc-hero.webp"
             alt="Main Landing Image"
           />
-          <div className=" absolute inset-0 w-full h-full bg-primaryColor opacity-[30%]"></div>
+          <div className=" absolute inset-0 w-full h-full 2xl:bg-primaryColor xl:bg-primaryColor lg:bg-primaryColor 2xl:opacity-[30%] xl:opacity-[30%] lg:opacity-[30%] md:bg-gradient-to-b md:from-white/10 md:to-primaryColor/95 sm:bg-gradient-to-b sm:from-white/10 sm:to-primaryColor/95 esm:bg-gradient-to-b esm: esm:from-white/5 esm:to-primaryColor/95"></div>
         </div>
       </section>
-      <section className="w-full h-[150px] bg-primaryColor flex items-center justify-center ">
-        <div className="w-[70%] flex flex-row items-center justify-evenly">
+      <section className="w-full p-10 bg-primaryColor flex items-center justify-center ">
+        <div className="w-[70%] flex flex-row items-center justify-evenly flex-wrap gap-10">
           <button className="flex flex-row items-center justify-center group gap-2 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
             <span>
               <svg
@@ -70,7 +72,9 @@ function Hero() {
                 />
               </svg>
             </span>
-            <h1 className="text-[24px]">Email Us</h1>
+            <h1 className="2xl:text-[24px] xl:text-[24px] lg:text-[24px] sm:text-[24px] esm:text-[20px]">
+              Email Us
+            </h1>
           </button>
           <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
             <span>
@@ -97,7 +101,9 @@ function Hero() {
                 />
               </svg>
             </span>
-            <h1 className="text-[24px]">Find Us</h1>
+            <h1 className="2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[24px] esm:text-[22px]">
+              Find Us
+            </h1>
           </button>
         </div>
       </section>

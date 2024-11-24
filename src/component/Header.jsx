@@ -3,26 +3,29 @@ import React from "react";
 function header() {
   return (
     <header>
-      <div className="2xl:header-container-2xl xl:header-container-xl ">
-        <div className="2xl:header-navleft-2xl xl:header-navleft-xl">
-          <div className="flex flex-row gap-3 ">
-            <h1 className=" 2xl:text-[36px] xl:text-[32px] font-extrabold text-primaryColor ">
+      <div className="2xl:header-container-2xl xl:header-container-xl lg:header-container-lg md:header-container-md sm:header-container-sm esm:header-container-esm ">
+        <div className="2xl:header-navleft-2xl xl:header-navleft-xl lg:header-navleft-lg md:header-navleft-md sm:header-navleft-sm esm:header-navleft-esm">
+          <div className="flex flex-row gap-3 text-nowrap  ">
+            <h1 className=" 2xl:text-[36px] xl:text-[32px] lg:text-[30px] md:text-[30px] sm:text-[28px] esm:text-[24px] font-extrabold text-primaryColor ">
               Noor
             </h1>
-            <h1 className="text-[36px] font-bold text-primaryColor">
+            <h1 className="2xl:text-[36px] xl:text-[36px] lg:text-[30px] md:text-[30px] sm:text-[28px] esm:text-[24px] font-bold text-primaryColor">
               Home Care
             </h1>
           </div>
-          <div className="mx-5">
-            <img src="logo-main.svg" alt="Logo" />
+          <div className="2xl:mx-5 xl:mx-5 lg:mx-5 md:mx-4 sm:mx-4 esm:mx-2">
+            <img
+              className="2xl:w-[95px] 2xl:h-[95px] xl:[92px] xl:[92px] lg:w-[88px] lg:h-[88px] md:w-[86px] md:h-[86px] sm:w-[82px] sm:h-[82px] esm:w-[80px] esm:h-[80px]"
+              src="logo-main.svg"
+              alt="Logo"
+            />
           </div>
         </div>
-        <div className="w-[50%] h-full flex items-center px-20 justify-end">
-          <button className="flex flex-row items-center gap-4 border-[2px] border-primaryColor px-4 py-1 rounded-2xl transition-all duration-100 hover:bg-primaryColor hover:text-white group  ">
-            <span>
+        <div className="w-[50%] h-full 2xl:flex xl:flex lg:flex md:flex sm:flex esm:hidden items-center 2xl:px-20 xl:px-16 lg:px-16 md:px-2 sm:px-0 esm:px-0 justify-end">
+          <button className="flex flex-row items-center gap-4 border-[2px] border-primaryColor px-4 py-1 text-nowrap  rounded-2xl transition-all duration-100 hover:bg-primaryColor hover:text-white group  ">
+            <span className="2xl:block xl:block lg:block md:block sm:block esm:hidden">
               <svg
-                width="28"
-                height="28"
+                className="2xl:w-[28px] 2xl:h-[28px] xl:w-[26px] xl:h-[26px] lg:w-[25px] lg:h-[25px] md:w-[24px] md:h-[24px] sm:w-[22px] sm:h-[22px]"
                 viewBox="0 0 28 28"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,12 +37,14 @@ function header() {
                 />
               </svg>
             </span>
-            <p className="text-[32px] font-bold">Call Us</p>
+            <p className="2xl:text-[32px] xl:text-[30px] lg:text-[28px] md:text-[26px] sm:text-[24px] esm:text-[22px] font-bold">
+              Call Us
+            </p>
           </button>
         </div>
       </div>
-      <nav className="w-full h-[45px] bg-primaryColor flex items-center justify-center">
-        <ul className="w-[40%] h-full flex items-center justify-evenly flex-row text-white text-[20px] ">
+      <nav className="w-full h-[45px] bg-primaryColor  items-center justify-center 2xl:flex xl:flex lg:flex md:hidden sm:hidden esm:hidden">
+        <ul className="2xl:w-[40%] xl:w-[42%] lg:w-[45%] h-full flex items-center justify-evenly flex-row text-white text-[20px] ">
           <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
             <a href="#">Home</a>
           </li>

@@ -9,11 +9,11 @@ function Services() {
 
 function Corousel() {
   return (
-    <div className="w-full h-full flex items-center my-40 justify-center">
-      <div className="container mx-auto p-10 bg-[#6F5E7C] rounded-2xl flex flex-row items-center justify-center overflow-x-hidden  gap-10 gap-y-20 border-black shadow-2xl shadow-primaryColor flex-wrap">
+    <div className="w-full h-full flex items-center 2xl:my-40 xl:my-40 lg:my-40 md:my-40 sm:my-20 esm:my-16 justify-center">
+      <div className="2xl:container xl:container lg:container md:container sm:container-none esm:container-none 2xl:mx-auto xl:mx-auto lg:mx-auto md:mx-auto sm:mx-10 esm:mx-2 p-10 bg-[#6F5E7C] rounded-2xl flex flex-row items-center justify-center overflow-x-hidden  gap-10 gap-y-20 border-black shadow-2xl shadow-primaryColor flex-wrap">
         {/* Left */}
         <div
-          className={` relative w-[400px] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 }`}
+          className={` relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 }`}
         >
           <div className="relative w-full h-[48%] bg-black">
             <img
@@ -23,7 +23,7 @@ function Corousel() {
             />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
           </div>
-          <div className="w-[80%] h-[70px]  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
+          <div className="2xl:w-[80%] xl:w-[90%] lg:w-[90%] md:w-[90%] sm:w-[90%] esm:w-[90%]  h-[70px]  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
             <h6 className="text-white text-[24px] font-bold">
               Morning Assistance
             </h6>
@@ -38,7 +38,7 @@ function Corousel() {
         </div>
         {/* Mid */}
         <div
-          className={`w-[400px] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 scale-[1.07] `}
+          className={`2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%]  h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 scale-[1.07] `}
         >
           <div className="relative w-full h-[48%] bg-black">
             <img
@@ -48,7 +48,7 @@ function Corousel() {
             />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
           </div>
-          <div className="w-[80%] h-[70px]  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
+          <div className="2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[70px]  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
             <h6 className="text-white text-[24px] font-bold">
               Medication Management
             </h6>
@@ -61,7 +61,7 @@ function Corousel() {
         </div>
         {/* Right */}
         <div
-          className={`relative w-[400px] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 `}
+          className={`relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%]  h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 `}
         >
           <div className="relative w-full h-[48%] bg-black">
             <img
@@ -86,7 +86,7 @@ function Corousel() {
         </div>
         {/* Left */}
         <div
-          className={` relative w-[400px] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 }`}
+          className={` relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%]  h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 }`}
         >
           <div className="relative w-full h-[48%] bg-black">
             <img
@@ -109,7 +109,7 @@ function Corousel() {
         </div>
         {/* Mid */}
         <div
-          className={`w-[400px] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 scale-[1.07] `}
+          className={`2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 scale-[1.07] `}
         >
           <div className="relative w-full h-[48%] bg-black">
             <img
@@ -134,7 +134,7 @@ function Corousel() {
         </div>
         {/* Right */}
         <div
-          className={`relative w-[400px] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 `}
+          className={`relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 `}
         >
           <div className="relative w-full h-[48%] bg-black">
             <img
