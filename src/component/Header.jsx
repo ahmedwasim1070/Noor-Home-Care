@@ -3,10 +3,10 @@ import React from "react";
 function header() {
   return (
     <header>
-      <div className="w-full h-[100px] container mx-auto bg-white flex flex-row  ">
-        <div className="w-[50%] h-full flex items-center px-20">
+      <div className="2xl:header-container-2xl xl:header-container-xl ">
+        <div className="2xl:header-navleft-2xl xl:header-navleft-xl">
           <div className="flex flex-row gap-3 ">
-            <h1 className=" text-[36px] font-extrabold text-primaryColor ">
+            <h1 className=" 2xl:text-[36px] xl:text-[32px] font-extrabold text-primaryColor ">
               Noor
             </h1>
             <h1 className="text-[36px] font-bold text-primaryColor">

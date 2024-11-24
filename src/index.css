@@ -6,3 +6,19 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer utilities {
+  @variants responsive {
+    .header-container-2xl {
+      @apply w-full h-[100px] container mx-auto bg-white flex flex-row;
+    }
+    .header-container-xl {
+      @apply w-full h-[95px] container mx-auto bg-white flex flex-row;
+    }
+    .header-navleft-2xl {
+      @apply w-[50%] h-full flex items-center px-20;
+    }
+    .header-navleft-xl {
+      @apply w-[50%] h-full flex items-center px-16;
+    }
+  }
+}
