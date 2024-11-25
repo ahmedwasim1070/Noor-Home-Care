@@ -18,7 +18,7 @@ function Corousel() {
           <div className="relative w-full h-[48%] bg-black">
             <img
               className="w-full h-full"
-              src="nhc-hero.webp"
+              src="noor-home-care-service-1.webp"
               alt="Service-1"
             />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
@@ -43,7 +43,7 @@ function Corousel() {
           <div className="relative w-full h-[48%] bg-black">
             <img
               className="w-full h-full"
-              src="nhc-hero.webp"
+              src="noor-home-care-service-2.webp"
               alt="Service-1"
             />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
@@ -66,7 +66,7 @@ function Corousel() {
           <div className="relative w-full h-[48%] bg-black">
             <img
               className="w-full h-full"
-              src="nhc-hero.webp"
+              src="noor-home-care-service-3.webp"
               alt="Service-1"
             />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
@@ -91,7 +91,7 @@ function Corousel() {
           <div className="relative w-full h-[48%] bg-black">
             <img
               className="w-full h-full"
-              src="nhc-hero.webp"
+              src="noor-home-care-service-4.webp"
               alt="Service-1"
             />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
@@ -116,7 +116,7 @@ function Corousel() {
           <div className="relative w-full h-[48%] bg-black">
             <img
               className="w-full h-full"
-              src="nhc-hero.webp"
+              src="noor-home-care-service-5.webp"
               alt="Service-1"
             />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
@@ -141,7 +141,7 @@ function Corousel() {
           <div className="relative w-full h-[48%] bg-black">
             <img
               className="w-full h-full"
-              src="nhc-hero.webp"
+              src="noor-home-care-service-6.webp"
               alt="Service-1"
             />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>

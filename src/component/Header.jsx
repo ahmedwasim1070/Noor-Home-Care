@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function header() {
   const [shNavbar, setShNavbar] = useState(false);
@@ -63,7 +64,7 @@ function header() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
                 strokeLinecap="round"
@@ -84,16 +85,20 @@ function header() {
       <nav className="w-full h-[45px] bg-primaryColor  items-center justify-center 2xl:flex xl:flex lg:flex md:hidden sm:hidden esm:hidden">
         <ul className="2xl:w-[40%] xl:w-[42%] lg:w-[45%] h-full flex items-center justify-evenly flex-row text-white text-[20px] ">
           <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
-            <a href="#">About Us</a>
+            <Link to="/about">About Us</Link>
           </li>
           <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
-            <a href="#">Services</a>
+            <Link to="/services" href="#">
+              Services
+            </Link>
           </li>
           <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
-            <a href="#">Join Us</a>
+            <Link to="/join-us" href="#">
+              Join Us
+            </Link>
           </li>
         </ul>
       </nav>
@@ -113,7 +118,7 @@ function header() {
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
                 strokeLinecap="round"
@@ -128,36 +133,40 @@ function header() {
         <div className=" h-[50%]  flex justify-center text-white ">
           <ul className="flex flex-col items-center justify-center gap-y-8 text-xl font-bold">
             <li>
-              <a
+              <Link
+                to="/"
                 className=" transition-all duration-300 hover:text-secondaryColor "
                 href=""
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                to="/about"
                 className=" transition-all duration-300 hover:text-secondaryColor "
                 href=""
               >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                to="/services"
                 className=" transition-all duration-300 hover:text-secondaryColor "
                 href=""
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                to="/join-us"
                 className=" transition-all duration-300 hover:text-secondaryColor "
                 href=""
               >
                 Join Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

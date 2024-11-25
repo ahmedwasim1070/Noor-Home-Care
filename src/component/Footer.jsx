@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <section>
-      <div className=" bg-primaryColor mt-20">
+      <div className=" bg-primaryColor">
         <div className="2xl:container xl:container lg:container md:container sm:container-none esm:contain-none mx-auto 2xl:px-20 xl:px-20 lg:px-10 md:px-8 sm:px-4 esm:px-2 flex flex-row flex-wrap 2xl:justify-center xl:justify-center lg:justify-center md:justify-center">
           <div className="2xl:w-[25%] xl:w-[25%] lg:w-[25%] md:w-[50%] p-10">
             <ul className="text-white underline flex flex-col gap-5">
@@ -36,9 +37,12 @@ function Footer() {
                 Criteria ?
               </a>
             </li>
-            <button className=" w-[35%] p-3 bg-secondaryColor text-white mx-auto rounded-lg border border-secondaryColor text-[20px] transition-all duration-300 hover:bg-transparent hover:border hover:border-white">
+            <Link
+              to="/join-us"
+              className=" w-[35%] p-3 bg-secondaryColor text-white text-center mx-auto rounded-lg border border-secondaryColor text-[20px] transition-all duration-300 hover:bg-transparent hover:border hover:border-white"
+            >
               Join Us
-            </button>
+            </Link>
           </div>
           <div className="2xl:w-[35%] xl:w-[35%] lg:w-[35%] md:w-[35%] sm:w-full esm:w-full  py-5">
             <div className=" flex justify-center items-center gap-2  text-white text-[30px]">
