@@ -32,7 +32,10 @@ function Hero() {
       </section>
       <section className="w-full p-10 bg-primaryColor flex items-center justify-center 2xl:rounded-none xl:rounded-none lg:rounded-none sm:rounded-b-3xl esm:rounded-b-3xl">
         <div className="w-[70%] flex flex-row items-center justify-evenly flex-wrap gap-10">
-          <button className="flex flex-row items-center justify-center group gap-2 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
+          <a
+            href="tel:+07880283423"
+            className="flex flex-row items-center justify-center cursor-pointer group gap-2 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor"
+          >
             <span>
               <svg
                 width="23"
@@ -52,8 +55,11 @@ function Hero() {
               +
             </p>
             <h1 className="text-[24px]">07880-283423</h1>
-          </button>
-          <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
+          </a>
+          <a
+            href="mailto:noorhomecare@hotmail.com"
+            className="flex flex-row items-center justify-center group gap-4  cursor-pointer transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor"
+          >
             <span>
               <svg
                 className=" group-hover:fill-primaryColor stroke-white group-hover:stroke-secondaryColor"
@@ -74,7 +80,7 @@ function Hero() {
             <h1 className="2xl:text-[24px] xl:text-[24px] lg:text-[24px] sm:text-[24px] esm:text-[20px]">
               Email Us
             </h1>
-          </button>
+          </a>
           <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
             <span>
               <svg

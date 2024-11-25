@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 function header() {
+  const [shNavbar, setShNavbar] = useState(false);
   return (
-    <header>
-      <div className="2xl:header-container-2xl xl:header-container-xl lg:header-container-lg md:header-container-md sm:header-container-sm esm:header-container-esm ">
+    <header className="sticky top-0 z-[9997] bg-white">
+      {shNavbar && (
+        <div
+          onClick={() => setShNavbar(false)}
+          className="fixed w-full h-full bg-black opacity-30 z-[9998]"
+        ></div>
+      )}
+      <div className="2xl:header-container-2xl xl:header-container-xl lg:header-container-lg md:header-container-md sm:header-container-sm esm:header-container-esm relative ">
         <div className="2xl:header-navleft-2xl xl:header-navleft-xl lg:header-navleft-lg md:header-navleft-md sm:header-navleft-sm esm:header-navleft-esm">
           <div className="flex flex-row gap-3 text-nowrap  ">
             <h1 className=" 2xl:text-[36px] xl:text-[32px] lg:text-[30px] md:text-[30px] sm:text-[28px] esm:text-[24px] font-extrabold text-primaryColor ">
@@ -22,7 +29,10 @@ function header() {
           </div>
         </div>
         <div className="w-[40%] h-full 2xl:flex xl:flex lg:flex md:flex sm:flex esm:hidden items-center 2xl:px-20 xl:px-16 lg:px-16 md:px-2 sm:px-0 esm:px-0 justify-end">
-          <button className="flex flex-row items-center gap-4 border-[2px] border-primaryColor px-4 py-1 text-nowrap  rounded-2xl transition-all duration-100 hover:bg-primaryColor hover:text-white group ">
+          <a
+            href="tel:+07880283423"
+            className="flex flex-row items-center gap-4 border-[2px] border-primaryColor px-4 py-1 text-nowrap  rounded-2xl transition-all duration-100 hover:bg-primaryColor hover:text-white group "
+          >
             <span className="2xl:block xl:block lg:block md:block sm:block esm:hidden">
               <svg
                 className="2xl:w-[28px] 2xl:h-[28px] xl:w-[26px] xl:h-[26px] lg:w-[25px] lg:h-[25px] md:w-[24px] md:h-[24px] sm:w-[22px] sm:h-[22px]"
@@ -40,10 +50,13 @@ function header() {
             <p className="2xl:text-[32px] xl:text-[30px] lg:text-[28px] md:text-[26px] sm:text-[24px] esm:text-[22px] font-bold">
               Call Us
             </p>
-          </button>
+          </a>
         </div>
-        <div className="h-full flex mx-5 items-center 2xl:hiden xl:hidden lg:hidden md:flex sm:flex esm:flex">
-          <button className="p-2 rounded-full">
+        <div className="h-full flex mx-2 items-center 2xl:hiden xl:hidden lg:hidden md:flex sm:flex esm:flex">
+          <button
+            onClick={() => setShNavbar(true)}
+            className="p-2 rounded-full"
+          >
             <svg
               className="stroke-primaryColor w-[40px] h-[40px] transition-all duration-300 hover:stroke-secondaryColor"
               viewBox="0 0 24 24"
@@ -85,9 +98,16 @@ function header() {
         </ul>
       </nav>
 
-      <nav className=" fixed  bg-primaryColor  w-[65%] h-[100vh] top-0 right-[-65%] hidden z-[9999] p-2">
+      <nav
+        className={`fixed  bg-primaryColor  w-[65%] h-[100vh] top-0 transition-all duration-150 ${
+          shNavbar ? "right-0" : "right-[-65%]"
+        } 2xl:hidden xl:hidden lg:hidden md:block sm:block esm:block z-[9999] p-2`}
+      >
         <div className="w-full flex justify-end px-3 py-4  ">
-          <button className="p-2 bg-secondaryColor border border-secondaryColor hover:border-white  rounded-full group hover:bg-transparent transition-all duration-300">
+          <button
+            onClick={() => setShNavbar(false)}
+            className="p-2 bg-secondaryColor border border-secondaryColor hover:border-white  rounded-full group hover:bg-transparent transition-all duration-300"
+          >
             <svg
               className="w-[32px] h-[32px] fill-primaryColor group-hover:fill-white"
               viewBox="0 0 1024 1024"

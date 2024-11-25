@@ -28,7 +28,7 @@ function Footer() {
             <p className=" text-white text-[14px] text-center">
               Become a part of our Team
             </p>
-            <li className="text-center">
+            <li className="text-center list-none">
               <a
                 className="text-secondaryColor underline text-[16px] text-center hover:text-white"
                 href="#"
@@ -71,7 +71,7 @@ function Footer() {
         </div>
         <div className="container mx-auto py-10">
           <h3 className=" text-white text-center ">
-            © Copyright Noor Home Care 2024.{" "}
+            © Copyright Noor Home Care 2024.
           </h3>
         </div>
       </div>
