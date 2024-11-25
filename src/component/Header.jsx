@@ -7,7 +7,7 @@ function header() {
       {shNavbar && (
         <div
           onClick={() => setShNavbar(false)}
-          className="fixed w-full h-full bg-black opacity-30 z-[9998]"
+          className="fixed inset-0 w-full h-[100%] bg-black opacity-60 z-[9998]"
         ></div>
       )}
       <div className="2xl:header-container-2xl xl:header-container-xl lg:header-container-lg md:header-container-md sm:header-container-sm esm:header-container-esm relative ">
@@ -99,7 +99,7 @@ function header() {
       </nav>
 
       <nav
-        className={`fixed  bg-primaryColor  w-[65%] h-[100vh] top-0 transition-all duration-150 ${
+        className={`fixed  bg-primaryColor  w-[65%] h-full top-0 transition-all duration-150 ${
           shNavbar ? "right-0" : "right-[-65%]"
         } 2xl:hidden xl:hidden lg:hidden md:block sm:block esm:block z-[9999] p-2`}
       >
