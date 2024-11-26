@@ -11,12 +11,12 @@ function JoinusPage() {
           <div className="2xl:w-[35.50%] xl:w-[35.50%] lg:w-[35.50%] md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px]  2xl:bg-secondaryColor/50 xl:bg-secondaryColor/50 lg:bg-secondaryColor/50 md:bg-gradient-to-b md:from-secondaryColor/95 md:to-secondaryColor sm:bg-gradient-to-b sm:from-secondaryColor/95 sm:to-secondaryColor esm:bg-gradient-to-b esm:from-secondaryColor/95 esm:to-secondaryColor  2xl:p-20 xl:p-20 lg:p-16 md:p-10 sm:p-10 esm:p-10 2xl:order-1 xl:order-1 lg:order-1 md:order-2 sm:order-2 esm:order-2">
             <div className="text-white w-full 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-[25%] sm:pl-[20%] esm:pl-0 2xl:block xl:block lg:block md:block sm:block  esm:flex esm:justify-center">
               <div className="2xl:w-[250px] xl:w-[240px] lg:w-[220px] md:w-[250px] sm:w-[200px] esm:w-[180px] 2xl:h-[80px] xl:h-[78px] lg:h-[70px] md:h-[65px] sm:h-[65px] esm:h-[65px] bg-primaryColor border rounded-[2px] border-primaryColor flex items-center justify-center  2xl:text-[36px] xl:text-[34px] lg:text-[28px] md:text-[22px] sm:text-[22px] esm:text-[22px] cursor-pointer  font-bold transition-all duration-500 hover:translate-x-[50px] ">
-                <h2>What</h2>
+                <h2>Join</h2>
               </div>
             </div>
             <div className="text-white  flex justify-center 2xl:px-0 xl:px-4 lg:px-4 md:px-6 sm:px-6">
               <div className="2xl:w-[350px] xl:w-[340px] lg:w-[320px] md:w-[320px] sm:w-[300px] esm:w-[280px] 2xl:h-[70px] xl:h-[68px] lg:h-[60px] md:h-[60px]  sm:h-[60px] esm:h-[60px] bg-primaryColor border rounded-[2px] border-primaryColor flex items-center justify-center  2xl:text-[24px] xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[18px] esm:text-[18px]  font-bold cursor-pointer transition-all duration-500 hover:translate-x-[-50px]">
-                <h2>We Offer ?</h2>
+                <h2>Our Team</h2>
               </div>
             </div>
             <div className="text-primaryColor flex 2xl:mt-20 xl:mt-20 lg:mt-20 md:mt-10  w-full 2xl:justify-start xl:justify-start lg:justify-start md:justify-center sm:justify-center sm:mt-10 esm:mt-10 esm:justify-center">
@@ -101,6 +101,79 @@ function JoinusPage() {
         Schedule a free care consultation to explore how our services can meet
         your unique needs.
       </div>
+
+      <section className="w-[70%] mx-auto flex">
+        <div
+          className="w-full bg-secondaryColor/70 py-5  px-10 rounded-t-3xl text-primaryColor"
+          action=""
+        >
+          <div className="text-center">
+            <p className="font-bold text-[40px]">Apply Now</p>
+          </div>
+          <form className="my-20 flex gap-10 flex-col text-[20px]" action="">
+            <div className="">
+              <input
+                className="w-[45%] h-[50px] outline-none border-none bg-primaryColor text-white rounded-lg text-[20px] p-2 placeholder:text-secondaryColor shadow-primaryColor shadow-2xl  "
+                placeholder="Name... "
+                type="text"
+              />
+            </div>
+            <div>
+              <input
+                className="w-[50%] h-[50px] outline-none border-none bg-primaryColor text-white rounded-lg text-[20px] p-2 placeholder:text-secondaryColor shadow-primaryColor shadow-2xl  "
+                placeholder="Email... "
+                type="email"
+              />
+            </div>
+            <div className="w-full flex flex-col items-center justify-center my-4  ">
+              <input
+                className="flex flex-col"
+                name="fileUpload"
+                accept="application/pdf"
+                type="file"
+              />
+              <p className="text-[12px] text-primaryColor/90">
+                Smaller then 2mb and should be pdf only
+              </p>
+            </div>
+          </form>
+          <div>
+            <button className="flex items-center gap-4 ">
+              <p>Submit</p>
+              <span>
+                <svg
+                  className="w-[24px] h-[24px]"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#000000"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title></title>
+                    <g id="Complete">
+                      <g id="tick">
+                        <polyline
+                          fill="none"
+                          points="3.7 14.3 9.6 19 20.3 5"
+                          stroke="#000000"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                        ></polyline>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>
