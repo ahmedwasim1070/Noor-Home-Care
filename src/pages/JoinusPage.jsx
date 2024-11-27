@@ -5,71 +5,85 @@ import Footer from "../component/Footer";
 
 function JoinusPage() {
   const [fileName, setFileName] = useState("");
-  const [isFile, setIsFile] = useState("");
   const fileInputRef = useRef();
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    if (e.target.name === "file") {
+      const file = e.target.files[0];
+      if (file) {
+        if (file.type === "application/pdf" && file.size <= 500000) {
+          setFileName(file.name);
+          convertToBase64(e, file);
+        } else {
+          setFileName("");
+          setFormData({ ...formData, [name]: null });
+        }
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+  const convertToBase64 = (e, file) => {
+    const { name } = e.target;
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setFormData({ ...formData, [name]: reader.result });
+    };
+    reader.readAsDataURL(file);
   };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    cv: isFile,
+    file: null,
   });
   const [errorState, setErrorState] = useState({
     name: false,
     email: false,
-    cv: false,
+    file: false,
   });
   const handleInpClick = () => {
     fileInputRef.current.click();
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    let formValid = true;
-
-    let newErrorState = { ...errorState };
-    if (formData.name.length <= 2 || formData.name.length >= 36) {
-      newErrorState.name = true;
-      formValid = false;
-    } else {
-      newErrorState.name = false;
-    }
-    if (formData.email.length <= 4 || formData.email.length >= 52) {
-      newErrorState.email = true;
-      formValid = false;
-    } else {
-      newErrorState.email = false;
-    }
-    if (formData.cv) {
-      newErrorState.cv = true;
-      formValid = false;
-    } else {
-      newErrorState.cv = false;
-    }
-    setErrorState(newErrorState);
-    if (!formValid) {
-      return;
-    }
+    // let formValid = true;
+    // let newErrorState = { ...errorState };
+    // if (formData.name.length <= 2 || formData.name.length >= 36) {
+    //   newErrorState.name = true;
+    //   formValid = false;
+    // } else {
+    //   newErrorState.name = false;
+    // }
+    // if (formData.email.length <= 4 || formData.email.length >= 52) {
+    //   newErrorState.email = true;
+    //   formValid = false;
+    // } else {
+    //   newErrorState.email = false;
+    // }
+    // if (formData.file) {
+    //   newErrorState.file = true;
+    //   formValid = false;
+    // } else {
+    //   newErrorState.file = false;
+    // }
+    // setErrorState(newErrorState);
+    // if (!formValid) {
+    //   return;
+    // }
+    console.log("nigger");
     emailjs
       .send(
-        "service_vg57kot",
-        "template_rjxgysl",
+        "service_qvcnhkt",
+        "template_y089nqd",
         formData,
-        "Fjy-fcxiwoKe8eMct"
+        "W0EOEd0wx6cy9ldPZ"
       )
-      .then((response) => {
-        setTimeout(() => {
-          setFormData({
-            name: "",
-            email: "",
-            cv: setIsFile(null),
-          });
-        }, 300);
+      .then((Response) => {
+        alert("scucess");
       })
       .catch((err) => {
-        toast.error("Failed ! Try Again Later");
-        setLoading(false);
+        alert(err, "Failed");
       });
   };
   return (
@@ -241,22 +255,9 @@ function JoinusPage() {
                 </label>
                 <input
                   ref={fileInputRef}
-                  value={formData.cv}
-                  onChange={(e) => {
-                    const file = e.target.files[0];
-                    if (
-                      file.type === "application/pdf" &&
-                      file.size <= 500000
-                    ) {
-                      setFileName(file.name);
-                      setIsFile(file);
-                    } else {
-                      setFileName("");
-                      setIsFile(null);
-                    }
-                  }}
+                  name="file"
+                  onChange={handleChange}
                   className="hidden"
-                  name="fileUpload"
                   accept="application/pdf"
                   type="file"
                   required
