@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
-import emailjs from "emailjs-com";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { Resend } from "resend";
+const resend = new Resend("re_at2DpLEu_LuR96EP2f2X3GR3PcoXZMQMC");
 
 function JoinusPage() {
   const [fileName, setFileName] = useState("");
@@ -13,7 +14,7 @@ function JoinusPage() {
       if (file) {
         if (file.type === "application/pdf" && file.size <= 500000) {
           setFileName(file.name);
-          convertToBase64(e, file);
+          convertToBase64(name, file);
         } else {
           setFileName("");
           setFormData({ ...formData, [name]: null });
@@ -23,8 +24,7 @@ function JoinusPage() {
       setFormData({ ...formData, [name]: value });
     }
   };
-  const convertToBase64 = (e, file) => {
-    const { name } = e.target;
+  const convertToBase64 = (name, file) => {
     const reader = new FileReader();
 
     reader.onloadend = () => {
@@ -45,46 +45,26 @@ function JoinusPage() {
   const handleInpClick = () => {
     fileInputRef.current.click();
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // let formValid = true;
-    // let newErrorState = { ...errorState };
-    // if (formData.name.length <= 2 || formData.name.length >= 36) {
-    //   newErrorState.name = true;
-    //   formValid = false;
-    // } else {
-    //   newErrorState.name = false;
-    // }
-    // if (formData.email.length <= 4 || formData.email.length >= 52) {
-    //   newErrorState.email = true;
-    //   formValid = false;
-    // } else {
-    //   newErrorState.email = false;
-    // }
-    // if (formData.file) {
-    //   newErrorState.file = true;
-    //   formValid = false;
-    // } else {
-    //   newErrorState.file = false;
-    // }
-    // setErrorState(newErrorState);
-    // if (!formValid) {
-    //   return;
-    // }
-    console.log("nigger");
-    emailjs
-      .send(
-        "service_qvcnhkt",
-        "template_y089nqd",
-        formData,
-        "W0EOEd0wx6cy9ldPZ"
-      )
-      .then((Response) => {
-        alert("scucess");
-      })
-      .catch((err) => {
-        alert(err, "Failed");
+    try {
+      await resend.emails.send({
+        from: "noorhomecare.netlify.app",
+        to: ["ahmedwasim1070@gmail.com"],
+        subject: "New Job Apply",
+        text: "Hello",
+        attachments: [
+          {
+            fileName: "UserCV.pdf",
+            content: formData.file,
+            type: "application/pdf",
+          },
+        ],
       });
+      alert(formData.file);
+    } catch (error) {
+      alert("error");
+    }
   };
   return (
     <>
