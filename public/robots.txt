@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://noorhomecare.netlify.app/sitemap.xml

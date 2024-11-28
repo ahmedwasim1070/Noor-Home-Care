@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { Helmet } from "react-helmet";
 
 function AboutPage() {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
+      <Helmet>
+        <title>About | Noor Home Care</title>
+      </Helmet>
       <Header />
-      <main>
+      <main className="smothUp fade-in  opacity-0 transition-opacity duration-1000 ease-in-out">
         <section className="flex flex-row 2xl:flex-nowrap xl:flex-nowrap lg:flex-nowrap  md:flex-wrap sm:flex-wrap esm:flex-wrap relative">
           <div className="2xl:w-[35.50%] xl:w-[35.50%] lg:w-[35.50%] md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px]  2xl:bg-primaryColor xl:bg-primaryColor lg:bg-primaryColor md:bg-gradient-to-b md:from-primaryColor/95 md:to-primaryColor sm:bg-gradient-to-b sm:from-primaryColor/95 sm:to-primaryColor esm:bg-gradient-to-b esm:from-primaryColor/95 esm:to-primaryColor 2xl:opacity-[95%] xl:opacity-[95%] lg:opacity-[95%] 2xl:p-20 xl:p-20 lg:p-16 md:p-10 sm:p-10 esm:p-10 2xl:order-1 xl:order-1 lg:order-1 md:order-2 sm:order-2 esm:order-2">
             <div className="text-white w-full 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-[25%] sm:pl-[20%] esm:pl-0 2xl:block xl:block lg:block md:block sm:block  esm:flex esm:justify-center">
@@ -30,19 +55,24 @@ function AboutPage() {
             <img
               className="w-full h-full  "
               src="nhc-hero-about.webp"
-              alt="Nurse helping old women "
+              alt="About in writeen with orange background"
             />
             <div className=" absolute inset-0 w-full h-full 2xl:bg-primaryColor xl:bg-primaryColor lg:bg-primaryColor 2xl:opacity-[30%] xl:opacity-[30%] lg:opacity-[30%] md:bg-gradient-to-b md:from-white/10 md:to-primaryColor/95 sm:bg-gradient-to-b sm:from-white/10 sm:to-primaryColor/95 esm:bg-gradient-to-b esm: esm:from-white/5 esm:to-primaryColor/95"></div>
           </div>
         </section>
       </main>
-      <section>
+      <section
+        ref={aboutRef}
+        className="opacity-0 transition-opacity duration-1000 ease-in-out "
+      >
         <div className="w-full 2xl:p-20 xl:p-20 lg:p-20 md:p-20 sm:p-4 esm:p-4 2xl:pt-20 xl:pt-20 lg:pt-20 md:pt-20 sm:pt-16 esm:pt-16 flex justify-center items-center">
           <div className=" 2xl:w-[60%] xl:w-[60%] lg:w-[65%] md:w-[70%] sm:w-full esm:w-full flex flex-col gap-y-10 2xl:items-start xl:items-start lg:items-start md:items-start sm:items-center esm:items-center">
             <p className="2xl:text-[48px] xl:text-[48px] lg:text-[48px] md:text-[48px] sm:text-[44px] esm:text-[42px] text-primaryColor font-bold text-nowrap">
               About Us
             </p>
             <article className="2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[20px] 2xl:text-start xl:text-start lg:text-start md:text-start sm:text-center esm:text-center">
+              <h1>A Home Care Service in UK</h1>
+              <br />
               At Noor Home Care, we pride ourselves on offering a comprehensive
               range of personalized home care services designed to help our
               clients maintain their independence, dignity, and comfort while
@@ -144,6 +174,8 @@ function AboutPage() {
         <div className="w-[70%] flex flex-row items-center justify-evenly flex-wrap gap-10">
           <a
             href="tel:+07880283423"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-row items-center justify-center cursor-pointer group gap-2 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor"
           >
             <span>
@@ -168,6 +200,8 @@ function AboutPage() {
           </a>
           <a
             href="mailto:noorhomecare@hotmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-row items-center justify-center group gap-4  cursor-pointer transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor"
           >
             <span>
@@ -191,7 +225,12 @@ function AboutPage() {
               Email Us
             </h1>
           </a>
-          <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
+          <a
+            href="https://maps.app.goo.gl/6tCupRRfw334AgcD6?g_st=com.google.maps.preview.copy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor"
+          >
             <span>
               <svg
                 className=" group-hover:fill-primaryColor stroke-white group-hover:stroke-secondaryColor"
@@ -218,7 +257,7 @@ function AboutPage() {
             <h1 className="2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[24px] esm:text-[22px]">
               Find Us
             </h1>
-          </button>
+          </a>
         </div>
       </section>
       <Footer />

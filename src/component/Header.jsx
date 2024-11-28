@@ -1,8 +1,13 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 function header() {
   const [shNavbar, setShNavbar] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <header className="sticky top-0 z-[9997] bg-white">
       {shNavbar && (
@@ -25,7 +30,7 @@ function header() {
             <img
               className="2xl:w-[95px] 2xl:h-[95px] xl:[92px] xl:[92px] lg:w-[88px] lg:h-[88px] md:w-[86px] md:h-[86px] sm:w-[82px] sm:h-[82px] esm:w-[80px] esm:h-[80px]"
               src="logo-main.svg"
-              alt="Logo"
+              alt="Noor Home Care Logo"
             />
           </div>
         </div>
@@ -84,22 +89,30 @@ function header() {
       </div>
       <nav className="w-full h-[45px] bg-primaryColor  items-center justify-center 2xl:flex xl:flex lg:flex md:hidden sm:hidden esm:hidden">
         <ul className="2xl:w-[40%] xl:w-[42%] lg:w-[45%] h-full flex items-center justify-evenly flex-row text-white text-[20px] ">
-          <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
-            <Link to="/about">About Us</Link>
-          </li>
-          <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
-            <Link to="/services" href="#">
-              Services
-            </Link>
-          </li>
-          <li className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer">
-            <Link to="/join-us" href="#">
-              Join Us
-            </Link>
-          </li>
+          <Link
+            to="/"
+            className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
+          >
+            <li>Home</li>
+          </Link>
+          <Link
+            to="/about"
+            className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
+          >
+            <li>About Us</li>
+          </Link>
+          <Link
+            to="/services"
+            className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
+          >
+            <li>Services</li>
+          </Link>
+          <Link
+            to="/join-us"
+            className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
+          >
+            <li>Join Us</li>
+          </Link>
         </ul>
       </nav>
 

@@ -1,10 +1,33 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { Resend } from "resend";
+import { Helmet } from "react-helmet";
 const resend = new Resend("re_at2DpLEu_LuR96EP2f2X3GR3PcoXZMQMC");
 
 function JoinusPage() {
+  const serviceRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (serviceRef.current) {
+      observer.observe(serviceRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const [fileName, setFileName] = useState("");
   const fileInputRef = useRef();
   const handleChange = (e) => {
@@ -47,12 +70,43 @@ function JoinusPage() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    let formValid = true;
+
+    let newErrorState = { ...errorState };
+
+    if (formData.name.length <= 2 || formData.name.length > 24) {
+      newErrorState.name = true;
+      formValid = false;
+    } else {
+      newErrorState.name = false;
+    }
+    if (formData.email.length <= 6 || formData.email.length >= 48) {
+      newErrorState.email = true;
+      formValid = false;
+    } else {
+      newErrorState.email = false;
+    }
+    if (!formData.file) {
+      newErrorState.file = true;
+      formValid = false;
+    } else {
+      newErrorState.file = false;
+    }
+    setErrorState(newErrorState);
+
+    if (!formValid) {
+      return;
+    }
+
     try {
       await resend.emails.send({
-        from: "noorhomecare.netlify.app",
+        from: "noorhomecare.co.uk",
         to: ["ahmedwasim1070@gmail.com"],
-        subject: "New Job Apply",
-        text: "Hello",
+        subject: "New Job Apply at Home Care by ",
+        html: `${`<p>Name: ${formData.name} </p>
+          <p>Email: ${formData.email} </p>
+          `}`,
         attachments: [
           {
             fileName: "UserCV.pdf",
@@ -61,15 +115,24 @@ function JoinusPage() {
           },
         ],
       });
-      alert(formData.file);
+      alert("The Message Was sent Sucessfully");
+      setFileName("");
+      setFormData({
+        name: "",
+        email: "",
+        file: null,
+      });
     } catch (error) {
-      alert("error");
+      alert("There was error Sending the message plz try again or contact us");
     }
   };
   return (
     <>
+      <Helmet>
+        <title>Join Us | Noor Home Care</title>
+      </Helmet>
       <Header />
-      <main>
+      <main className="smothUp fade-in  opacity-0 transition-opacity duration-1000 ease-in-out">
         <section className="flex flex-row 2xl:flex-nowrap xl:flex-nowrap lg:flex-nowrap  md:flex-wrap sm:flex-wrap esm:flex-wrap relative">
           <div className="2xl:w-[35.50%] xl:w-[35.50%] lg:w-[35.50%] md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px]  2xl:bg-secondaryColor/50 xl:bg-secondaryColor/50 lg:bg-secondaryColor/50 md:bg-gradient-to-b md:from-secondaryColor/95 md:to-secondaryColor sm:bg-gradient-to-b sm:from-secondaryColor/95 sm:to-secondaryColor esm:bg-gradient-to-b esm:from-secondaryColor/95 esm:to-secondaryColor  2xl:p-20 xl:p-20 lg:p-16 md:p-10 sm:p-10 esm:p-10 2xl:order-1 xl:order-1 lg:order-1 md:order-2 sm:order-2 esm:order-2">
             <div className="text-white w-full 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-[25%] sm:pl-[20%] esm:pl-0 2xl:block xl:block lg:block md:block sm:block  esm:flex esm:justify-center">
@@ -92,20 +155,23 @@ function JoinusPage() {
             <img
               className="w-full h-full  "
               src="nhc-hero-joinus.webp"
-              alt="Nurse helping old women "
+              alt="Group of people joining hands"
             />
             <div className=" absolute inset-0 w-full h-full 2xl:bg-primaryColor xl:bg-primaryColor lg:bg-primaryColor 2xl:opacity-[30%] xl:opacity-[30%] lg:opacity-[30%] md:bg-gradient-to-b md:from-white/10 md:to-primaryColor/95 sm:bg-gradient-to-b sm:from-white/10 sm:to-primaryColor/95 esm:bg-gradient-to-b esm: esm:from-white/5 esm:to-primaryColor/95"></div>
           </div>
         </section>
       </main>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center ">
         <div className="2xl:w-[900px] xl:w-[850px] lg:w-[750px] md:w-[80%] sm:w-[80%] esm:w-[80%] h-[80px] bg-secondaryColor rounded-[5px] flex items-center justify-center my-10">
           <p className=" text-white  font-bold 2xl:text-[36px] xl:text-[36px] lg:text-[36px] md:text-[36px] sm:text-[32px] esm:text-[30px]">
             Employe Facilities
           </p>
         </div>
       </div>
-      <div className="w-full h-full flex items-center 2xl:my-30 xl:my-30 lg:my-30 md:my-30 sm:my-10 esm:my-6 justify-center">
+      <div
+        ref={serviceRef}
+        className="w-full h-full flex items-center 2xl:my-30 xl:my-30 lg:my-30 md:my-30 sm:my-10 esm:my-6 justify-center opacity-0 transition-opacity duration-1000 ease-in-out"
+      >
         <div className="2xl:container xl:container lg:container md:container sm:container-none esm:container-none 2xl:mx-auto xl:mx-10 lg:mx-auto md:mx-auto sm:mx-10 esm:mx-2 2xl:p-10 xl:p-16 lg:p-10 md:p-10 sm:p-8 esm:p-4 bg-secondaryColor/80 rounded-2xl flex flex-row items-center justify-center overflow-x-hidden  gap-10 gap-y-20 border-black shadow-2xl shadow-primaryColor flex-wrap">
           <div
             className={` relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[250px] bg-secondaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 justify-center }`}
@@ -183,9 +249,12 @@ function JoinusPage() {
                   handleChange(e);
                 }}
                 value={formData.name}
-                className="2xl:w-[45%] xl:w-[45%] lg:w-[50%] md:w-[55%] sm:w-[60%] esm:w-[85%] h-[50px] outline-none border-none bg-primaryColor text-white rounded-lg text-[20px] p-2 px-4 placeholder:text-white shadow-primaryColor shadow-2xl  "
+                className={`2xl:w-[45%] xl:w-[45%] lg:w-[50%] md:w-[55%] sm:w-[60%] esm:w-[85%] h-[50px] outline-none border-none bg-primaryColor text-white rounded-lg text-[20px] p-2 px-4 placeholder:text-white shadow-primaryColor shadow-2xl ${
+                  errorState.name ? "bg-red-500 " : ""
+                }`}
                 placeholder="Name... "
                 type="text"
+                required
               />
             </div>
             <div>
@@ -195,15 +264,20 @@ function JoinusPage() {
                   handleChange(e);
                 }}
                 value={formData.email}
-                className="2xl:w-[50%] xl:w-[50%] lg:w-[55%] md:w-[60%] sm:w-[65%] esm:w-[90%]  h-[50px] outline-none border-none bg-primaryColor text-white rounded-lg text-[20px] p-2 px-4 placeholder:text-white shadow-primaryColor shadow-2xl  "
+                className={`2xl:w-[50%] xl:w-[50%] lg:w-[55%] md:w-[60%] sm:w-[65%] esm:w-[90%]  h-[50px] outline-none border-none bg-primaryColor text-white rounded-lg text-[20px] p-2 px-4 placeholder:text-white shadow-primaryColor shadow-2xl ${
+                  errorState.email ? "bg-red-500" : ""
+                }`}
                 placeholder="Email... "
                 type="email"
+                required
               />
             </div>
-            <div className="w-full flex flex-col items-center justify-center my-4  ">
+            <div className="w-full flex flex-col items-center justify-center  ">
               <div
                 onClick={handleInpClick}
-                className="w-[180px] h-[180px] flex flex-col justify-center gap-y-2 items-center rounded-xl border border-white/40 bg-primaryColor/70 cursor-pointer hover:border-white hover:bg-primaryColor/40 overflow-hidden"
+                className={`w-[180px] h-[180px] flex flex-col justify-center gap-y-2 items-center rounded-xl border border-white/40 bg-primaryColor/70 cursor-pointer hover:border-white hover:bg-primaryColor/40 overflow-hidden ${
+                  errorState.file ? "bg-red-500" : ""
+                }`}
               >
                 <span>
                   <svg
@@ -211,11 +285,11 @@ function JoinusPage() {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></g>
                     <g id="SVGRepo_iconCarrier">
                       <path
@@ -247,50 +321,59 @@ function JoinusPage() {
                 </p>
               </div>
             </div>
-          </form>
-          <div onsu className="">
-            <button
-              onClick={(e) => {
-                handleSubmit(e);
-              }}
-              className="flex items-center justify-center gap-4 mx-auto py-4 border border-primaryColor px-10 rounded-2xl bg-secondaryColor transition-all duration-300 group hover:bg-secondaryColor/40 hover:border-white/70  "
-            >
-              <p className="text-[22px] font-bold">Submit</p>
-              <span>
-                <svg
-                  className="w-[24px] h-[20px] border-primaryColor fill-secondaryColor stroke-white"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <title></title>
-                    <g id="Complete">
-                      <g id="tick">
-                        <polyline
-                          points="3.7 14.3 9.6 19 20.3 5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                        ></polyline>
+            {errorState.name || errorState.email || errorState.file ? (
+              <div className="text-center mx-auto text-red-400">
+                <p>Fill all the contents first!</p>
+              </div>
+            ) : (
+              ""
+            )}
+            <div className="">
+              <button
+                onClick={(e) => {
+                  handleSubmit(e);
+                }}
+                className="flex items-center justify-center gap-4 mx-auto py-4 border border-primaryColor mt-10 px-10 rounded-2xl bg-secondaryColor transition-all duration-300 group hover:bg-secondaryColor/40 hover:border-white/70  "
+              >
+                <p className="text-[22px] font-bold">Submit</p>
+                <span>
+                  <svg
+                    className="w-[24px] h-[20px] border-primaryColor fill-secondaryColor stroke-white"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <title></title>
+                      <g id="Complete">
+                        <g id="tick">
+                          <polyline
+                            points="3.7 14.3 9.6 19 20.3 5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                          ></polyline>
+                        </g>
                       </g>
                     </g>
-                  </g>
-                </svg>
-              </span>
-            </button>
-          </div>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </form>
         </div>
       </section>
       <section className="w-full p-10 bg-gradient-to-b from-primaryColor/70 to-primaryColor flex items-center justify-center">
         <div className="w-[70%] flex flex-row items-center justify-evenly flex-wrap gap-10">
           <a
             href="tel:+07880283423"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-row items-center justify-center cursor-pointer group gap-2 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor"
           >
             <span>
@@ -315,6 +398,8 @@ function JoinusPage() {
           </a>
           <a
             href="mailto:noorhomecare@hotmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-row items-center justify-center group gap-4  cursor-pointer transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor"
           >
             <span>
@@ -338,7 +423,12 @@ function JoinusPage() {
               Email Us
             </h1>
           </a>
-          <button className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor">
+          <a
+            href="https://maps.app.goo.gl/6tCupRRfw334AgcD6?g_st=com.google.maps.preview.copy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-row items-center justify-center group gap-4 transition-all duration-300 text-white border border-white px-5 py-4 rounded-full hover:bg-secondaryColor hover:border-secondaryColor"
+          >
             <span>
               <svg
                 className=" group-hover:fill-primaryColor stroke-white group-hover:stroke-secondaryColor"
@@ -365,7 +455,7 @@ function JoinusPage() {
             <h1 className="2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[24px] esm:text-[22px]">
               Find Us
             </h1>
-          </button>
+          </a>
         </div>
       </section>
 

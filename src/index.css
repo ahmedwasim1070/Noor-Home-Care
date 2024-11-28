@@ -44,3 +44,30 @@
     @apply w-[100%] h-full flex items-center px-0;
   }
 }
+
+
+@keyframes smothUptransition {
+  0%{
+    transform: translateY(2.5rem);
+    opacity: 0;
+
+  }
+  50%{
+    transform: translateY(1.5rem);
+    opacity: 50%;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.8s ease-in;
+}
+
+.smothUp{
+  animation: smothUptransition .5s ease-in;
+}
