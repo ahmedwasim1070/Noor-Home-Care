@@ -31,7 +31,7 @@ function Footer() {
             </p>
             <li className="text-center list-none">
               <Link
-                className="text-white underline hover:text-secondaryColor"
+                className="text-secondaryColor underline hover:text-white"
                 to="/join-us"
               >
                 Criteria ?

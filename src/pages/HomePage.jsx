@@ -302,31 +302,6 @@ function home() {
             </div>
             <div className="w-full h-full absolute inset-0 bg-gradient-to-r from-transparent to-black/30"></div>
           </div>
-          {/* Left */}
-          {/* <div
-            className={` relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%]  h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 }`}
-          >
-            <div className="relative w-full h-[48%] bg-black">
-              <img
-                className="w-full h-full"
-                src="noor-home-care-service-4.webp"
-                alt="An old women huging someone"
-              />
-              <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
-            </div>
-            <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[80%] h-[70px] text-nowrap  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
-              <h6 className="text-white 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[19px] font-bold">
-                Flexible Care Options
-              </h6>
-            </div>
-            <div>
-              <p className="text-center text-white 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[17px] esm:text-[16px] mx-10">
-                Whether you need hourly support, full-time care, or something in
-                between, we’re here to provide the right care at the right time.
-              </p>
-            </div>
-            <div className="w-full h-full absolute inset-0 bg-gradient-to-l from-transparent to-black/30"></div>
-          </div> */}
           {/* Mid */}
           <div
             className={`2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 scale-[1.07] `}
@@ -334,7 +309,7 @@ function home() {
             <div className="relative w-full h-[48%] bg-black">
               <img
                 className="w-full h-full"
-                src="noor-home-care-service-5.webp"
+                src="noor-home-care-service-4.webp"
                 alt="Old women coming out of the car"
               />
               <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
@@ -351,32 +326,6 @@ function home() {
               </p>
             </div>
           </div>
-          {/* Right */}
-          {/* <div
-            className={`relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 `}
-          >
-            <div className="relative w-full h-[48%] bg-black">
-              <img
-                className="w-full h-full"
-                src="noor-home-care-service-6.webp"
-                alt="An old women looking outside behind the glass"
-              />
-              <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-transparent to-primaryColor"></div>
-            </div>
-            <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[80%] h-[70px] text-nowrap  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
-              <h6 className="text-white 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[18px] font-bold">
-                Evening/Bedtime Support
-              </h6>
-            </div>
-            <div>
-              <p className="text-center text-white 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[17px] esm:text-[16px] mx-10">
-                Assistance with evening routines, including getting ready for
-                bed, preparing a bedtime drink, and helping clients settle in
-                for a restful night.
-              </p>
-            </div>
-            <div className="w-full h-full absolute inset-0 bg-gradient-to-r from-transparent to-black/30"></div>
-          </div> */}
           <div className="bg-primaryColor rounded-[10px] shadow-primaryColor shadow-2xl flex flex-col 2xl:p-10 xl:p-10 lg:p-10 md:p-10 sm:p-10 esm:p-6 gap-y-10">
             <div>
               <p className="text-center text-white 2xl:text-[20px] xl:text-[20px] lg:text-[20px] md:text-[20px] sm:text-[19px] esm:text-[19px] 2xl:mx-10 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-2 esm:mx-0">
