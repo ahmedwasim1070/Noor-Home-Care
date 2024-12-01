@@ -12,4 +12,4 @@ Resend.com (For Input Form)
 
 
 Link:
-<a>noorhomecare.co.uk</a>
+[Visit Google](https://www.noorhomecare.co.uk)
