@@ -11,5 +11,5 @@ Email Service:
 Resend.com (For Input Form)
 
 
-Link:
-[Visit Google](https://www.noorhomecare.co.uk)
+Web Link:
+[Noor Home Care](https://www.noorhomecare.co.uk)
