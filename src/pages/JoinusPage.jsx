@@ -147,7 +147,8 @@ function JoinusPage() {
             </div>
             <div className="text-primaryColor flex 2xl:mt-20 xl:mt-20 lg:mt-20 md:mt-10  w-full 2xl:justify-start xl:justify-start lg:justify-start md:justify-center sm:justify-center sm:mt-10 esm:mt-10 esm:justify-center">
               <p className="2xl:text-[24px] xl:text-[23px] lg:text-[22px]  md:text-[22px] sm:text-[22px] esm:text-[20px] text-center">
-                For employers seeking skilled healthcare staff
+                Are you passionate about making a positive contribution to the
+                lives and wellbeing of adults?
               </p>
             </div>
           </div>

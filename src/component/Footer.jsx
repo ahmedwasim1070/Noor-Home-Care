@@ -29,7 +29,18 @@ function Footer() {
             <p className=" text-white text-[14px] text-center">
               Become a part of our Team
             </p>
-            <li className="text-center list-none"></li>
+            <li className="text-center list-none">
+              <Link
+                className="text-white underline hover:text-secondaryColor"
+                to="/join-us"
+              >
+                Criteria ?
+              </Link>
+            </li>
+            <p className=" text-white text-[10px] text-center">
+              Are you passionate about making a positive contribution to the
+              lives and wellbeing of adults?
+            </p>
             <Link
               to="/join-us"
               className=" w-[35%] p-3 bg-secondaryColor text-white text-center mx-auto rounded-lg border border-secondaryColor text-[20px] transition-all duration-300 hover:bg-transparent hover:border hover:border-white"

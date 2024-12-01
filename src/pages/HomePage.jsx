@@ -48,9 +48,12 @@ function home() {
                 <h2>For Your Loved One’s</h2>
               </div>
             </div>
-            <div className="text-white flex 2xl:mt-20 xl:mt-20 lg:mt-20 md:mt-10  w-full 2xl:justify-start xl:justify-start lg:justify-start md:justify-center sm:justify-center sm:mt-10 esm:mt-10 esm:justify-center">
+            <div className="text-white flex flex-col gap-y-8 2xl:mt-20 xl:mt-20 lg:mt-20 md:mt-10  w-full 2xl:justify-start xl:justify-start lg:justify-start md:justify-center sm:justify-center sm:mt-10 esm:mt-10 esm:justify-center">
               <p className="2xl:text-[24px] xl:text-[23px] lg:text-[22px]  md:text-[22px] sm:text-[22px] esm:text-[20px] text-center">
                 Kingston upon Hull , United Kingdom
+              </p>
+              <p className="2xl:text-[24px] xl:text-[23px] lg:text-[22px]  md:text-[22px] sm:text-[22px] esm:text-[20px] text-center">
+                For free consultation contact us
               </p>
             </div>
           </div>
@@ -164,14 +167,28 @@ function home() {
               About Us
             </p>
             <article className="2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[20px] 2xl:text-start xl:text-start lg:text-start md:text-start sm:text-center esm:text-center">
-              At Noor Home Care, we are committed to providing the care and
-              support that allows you to stay comfortably in your own home. With
-              us, you can enjoy the comfort of familiar surroundings, surrounded
-              by your belongings and cherished memories, while friends and
-              family are welcome to visit anytime. Our compassionate team at
-              Noor Home Care is here to help you maintain independence and peace
-              of mind, delivering high-quality, personalized care right where
-              you feel most at home.
+              At <strong>Noor Home Care</strong>, we are committed to providing
+              the care and support that allows you to stay comfortably in your
+              own home. With us, you can enjoy the comfort of familiar
+              surroundings, surrounded by your belongings and cherished
+              memories, while friends and family are welcome to visit anytime.
+              Our compassionate team at Noor Home Care is here to help you
+              maintain independence and peace of mind, delivering high-quality,
+              personalized care right where you feel most at home.
+              <br />
+              <br />
+              We believe that everyone deserves to live with dignity and peace
+              of mind. That’s why we create personalized care plans tailored to
+              meet your unique needs, ensuring that you receive the right level
+              of support every step of the way. Whether it’s assistance with
+              daily activities or companionship to brighten your day, our
+              dedicated team is here to help.
+              <br />
+              <br />
+              Family and friends are always welcome, and we encourage the
+              connection and joy that come from being surrounded by loved ones.
+              At Noor Home Care, we’re more than caregivers—we’re companions who
+              truly care.
             </article>
             <h3 className="text-primaryColor  font-bold 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[20px] 2xl:text-start xl:text-start lg:text-start md:text-start sm:text-center esm:text-center">
               Our compassionate home care services help clients maintain
@@ -192,7 +209,24 @@ function home() {
         ref={servicesRef}
         className="w-full h-full flex items-center 2xl:my-40 xl:my-40 lg:my-40 md:my-40 sm:my-20 esm:my-16 justify-center smothUp opacity-0 transition-opacity duration-1000 ease-in-out"
       >
-        <div className="2xl:container xl:container lg:container md:container sm:container-none esm:container-none 2xl:mx-auto xl:mx-10 lg:mx-auto md:mx-auto sm:mx-10 esm:mx-2 2xl:p-10 xl:p-16 lg:p-10 md:p-10 sm:p-8 esm:p-4 bg-[#6F5E7C] rounded-2xl flex flex-row items-center justify-center overflow-x-hidden  gap-10 gap-y-20 border-black shadow-2xl shadow-primaryColor flex-wrap">
+        <div className="2xl:container xl:container lg:container md:container sm:container-none esm:container-none 2xl:mx-auto xl:mx-10 lg:mx-auto md:mx-auto sm:mx-10 esm:mx-2 2xl:p-10 xl:p-16 lg:p-10 md:p-10 sm:p-8 esm:p-4 bg-secondaryColor rounded-2xl flex flex-row items-center justify-center overflow-x-hidden  gap-10 gap-y-20 border-black shadow-2xl shadow-primaryColor flex-wrap">
+          <div className="bg-primaryColor rounded-[10px] shadow-primaryColor shadow-2xl flex flex-col 2xl:p-10 xl:p-10 lg:p-10 md:p-10 sm:p-10 esm:p-6 gap-y-10">
+            <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[95%] h-[70px] text-nowrap mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
+              <h6 className="text-white 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[19px] font-bold">
+                Our Services
+              </h6>
+            </div>
+            <div>
+              <p className="text-center text-white 2xl:text-[20px] xl:text-[20px] lg:text-[20px] md:text-[20px] sm:text-[19px] esm:text-[19px] 2xl:mx-10 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-2 esm:mx-0">
+                Our services are designed to provide the highest level of
+                comfort and support, tailored to your needs.
+                <br />
+                <strong className="2xl:text-[22px] xl:text-[22px] lg:text-[22px] md:text-[22px] sm:text-[21px] esm:text-[21px]">
+                  We specialize in
+                </strong>
+              </p>
+            </div>
+          </div>
           {/* Left */}
           <div
             className={` relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 }`}
@@ -207,13 +241,14 @@ function home() {
             </div>
             <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[80%]  h-[70px] text-nowrap  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
               <h6 className="text-white  font-bold 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[19px]">
-                Morning Assistance
+                Personalized Assistance
               </h6>
             </div>
             <div>
               <p className="text-center text-white 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[17px] esm:text-[16px] mx-10 ">
-                Support with starting the day, including help with getting up,
-                dressing, and preparing breakfast
+                From meal preparation and medication reminders to mobility
+                support and personal hygiene, we’re here to help you manage
+                daily activities with ease.
               </p>
             </div>
             <div className="w-full h-full absolute inset-0 bg-gradient-to-l from-transparent to-black/30"></div>
@@ -232,12 +267,13 @@ function home() {
             </div>
             <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[80%] h-[70px] text-nowrap  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
               <h6 className="text-white 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[19px] font-bold">
-                Medication Management
+                Respite Care
               </h6>
             </div>
             <div>
               <p className="text-center text-white 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[17px] esm:text-[16px] mx-10">
-                Timely reminders or administration of medications as prescribed.
+                Temporary relief for primary Caregivers, allowing them time to
+                recharge while loved ones is well supported.
               </p>
             </div>
           </div>
@@ -255,19 +291,19 @@ function home() {
             </div>
             <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[80%] h-[70px] text-nowrap  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
               <h6 className="text-white 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[19px] font-bold">
-                Household Tasks
+                Household Support
               </h6>
             </div>
             <div>
               <p className="text-center text-white 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[17px] esm:text-[16px] mx-10">
-                Assistance with cleaning, laundry, and ironing to keep the home
-                environment pleasant and organized.
+                Light housekeeping, errands, and meal planning to ensure your
+                home stays a safe and welcoming environment.
               </p>
             </div>
             <div className="w-full h-full absolute inset-0 bg-gradient-to-r from-transparent to-black/30"></div>
           </div>
           {/* Left */}
-          <div
+          {/* <div
             className={` relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%]  h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 }`}
           >
             <div className="relative w-full h-[48%] bg-black">
@@ -280,17 +316,17 @@ function home() {
             </div>
             <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[80%] h-[70px] text-nowrap  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
               <h6 className="text-white 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[19px] font-bold">
-                Respite Care
+                Flexible Care Options
               </h6>
             </div>
             <div>
               <p className="text-center text-white 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[17px] esm:text-[16px] mx-10">
-                Temporary relief for primary caregivers, allowing them time to
-                recharge while their loved one is supported.
+                Whether you need hourly support, full-time care, or something in
+                between, we’re here to provide the right care at the right time.
               </p>
             </div>
             <div className="w-full h-full absolute inset-0 bg-gradient-to-l from-transparent to-black/30"></div>
-          </div>
+          </div> */}
           {/* Mid */}
           <div
             className={`2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 scale-[1.07] `}
@@ -305,19 +341,18 @@ function home() {
             </div>
             <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[80%] h-[70px] text-nowrap  mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
               <h6 className="text-white 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[19px] font-bold">
-                Errands and Outings
+                Flexible Care Options
               </h6>
             </div>
             <div>
               <p className="text-center text-white 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[17px] esm:text-[16px] mx-10">
-                Help with grocery shopping, arranging outings, putting away
-                items, and enjoying social activities such as coffee mornings or
-                day trips.
+                Whether you need hourly support, full-time care, or something in
+                between, we’re here to provide the right care at the right time.
               </p>
             </div>
           </div>
           {/* Right */}
-          <div
+          {/* <div
             className={`relative 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] esm:w-[98%] h-[500px] bg-primaryColor rounded-[10px] overflow-hidden flex flex-col gap-y-5 shadow-2xl shadow-primaryColor flex-nowrap flex-shrink-0 `}
           >
             <div className="relative w-full h-[48%] bg-black">
@@ -341,19 +376,13 @@ function home() {
               </p>
             </div>
             <div className="w-full h-full absolute inset-0 bg-gradient-to-r from-transparent to-black/30"></div>
-          </div>
+          </div> */}
           <div className="bg-primaryColor rounded-[10px] shadow-primaryColor shadow-2xl flex flex-col 2xl:p-10 xl:p-10 lg:p-10 md:p-10 sm:p-10 esm:p-6 gap-y-10">
-            <div className="2xl:w-[80%] xl:w-[80%] lg:w-[80%] md:w-[80%] sm:w-[85%] esm:w-[95%] h-[70px] text-nowrap mx-auto  bg-primaryColor border border-[rgba(255,255,255,0.2)] rounded-[10px] flex justify-center items-center shadow-2xl">
-              <h6 className="text-white 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[19px] font-bold">
-                Night Care Services
-              </h6>
-            </div>
             <div>
-              <p className="text-center text-white 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[17px] esm:text-[16px] 2xl:mx-10 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-2 esm:mx-0">
-                Our night care services provide overnight assistance tailored to
-                individual needs: Sleeping Night: Caregivers rest nearby, ready
-                to assist as needed. Waking Night: Caregivers stay awake,
-                offering continuous support throughout the night.
+              <p className="text-center text-white 2xl:text-[20px] xl:text-[20px] lg:text-[20px] md:text-[20px] sm:text-[19px] esm:text-[19px] 2xl:mx-10 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-2 esm:mx-0">
+                At <strong>Noor Home Care</strong>, we are committed to
+                enhancing your quality of life, ensuring you feel supported,
+                valued, and cared for every single day.
               </p>
             </div>
           </div>

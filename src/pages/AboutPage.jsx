@@ -71,104 +71,42 @@ function AboutPage() {
               About Us
             </p>
             <article className="2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] sm:text-[22px] esm:text-[20px] 2xl:text-start xl:text-start lg:text-start md:text-start sm:text-center esm:text-center">
-              <h1>A Home Care Service in UK</h1>
+              <h1>
+                <strong>Noor Home Care UK </strong>
+              </h1>
               <br />
-              At Noor Home Care, we pride ourselves on offering a comprehensive
-              range of personalized home care services designed to help our
-              clients maintain their independence, dignity, and comfort while
-              staying in the familiar surroundings of their own homes. We
-              understand that home is where cherished memories reside, and it is
-              our mission to ensure you or your loved ones can enjoy the peace
-              and security that comes from being in a place filled with
-              familiarity and love. Noor Home Care is dedicated to providing
-              tailored care solutions that meet the unique needs of each
-              individual, fostering a sense of well-being and independence while
-              delivering the highest standards of compassionate support.
+              At Noor Home Care, we understand the importance of feeling safe,
+              supported, and cared for in the comfort of your own home. Our
+              mission is to provide compassionate, high-quality care that
+              empowers individuals to maintain their independence while enjoying
+              the familiar surroundings of home.
               <br />
               <br />
               <br />
-              Our home care services at Noor Home Care are built around the
-              principle that every individual deserves respect, empathy, and
-              high-quality care. Whether it's assistance with daily routines,
-              companionship, or specialized support, we strive to make life more
-              manageable and fulfilling for our clients. From early morning to
-              late at night, Noor Home Care is here to ensure every aspect of
-              home care is handled with professionalism and attention to detail,
-              helping our clients feel safe, secure, and cared for in their own
-              homes.
+              We believe that everyone deserves to live with dignity and peace
+              of mind. That’s why we create personalized care plans tailored to
+              meet your unique needs, ensuring that you receive the right level
+              of support every step of the way. Whether it’s assistance with
+              daily activities or companionship to brighten your day, our
+              dedicated team is here to help.
               <br />
               <br />
               <br />
-              We offer a wide array of home care services, including morning
-              assistance to help start the day with ease, such as support with
-              getting up, dressing, and preparing breakfast. Our team at Noor
-              Home Care understands the importance of medication management,
-              providing timely reminders or administration to ensure clients
-              stay on track with their health needs. In addition, we assist with
-              household tasks like cleaning, laundry, and ironing, ensuring that
-              the home remains a welcoming and organized space for our clients
-              to relax and thrive.
+              Family and friends are always welcome, and we encourage the
+              connection and joy that come from being surrounded by loved ones.
+              At Noor Home Care, we’re more than caregivers—we’re companions who
+              truly care.
               <br />
               <br />
               <br />
-              Respite care is another vital service provided by Noor Home Care,
-              giving primary caregivers the chance to rest and recharge while
-              knowing their loved ones are in capable and caring hands. We also
-              assist with errands and outings, such as grocery shopping,
-              organizing social activities, or arranging enjoyable day trips.
-              These moments of connection and activity are important for
-              maintaining a balanced and engaging lifestyle, and Noor Home Care
-              is dedicated to making these experiences as smooth and enjoyable
-              as possible. For evening and bedtime routines, our compassionate
-              caregivers are available to help clients wind down, prepare for
-              sleep, and settle in for a restful night, ensuring they feel
-              supported and cared for every step of the way.
-              <br />
-              <br />
-              <br />
-              At Noor Home Care, we understand that the needs of our clients do
-              not end when the day is over, which is why we also provide
-              specialized night care services. Whether it’s a sleeping night
-              where caregivers are on hand to assist when needed or a waking
-              night where our team remains awake and alert to provide continuous
-              support, Noor Home Care ensures that clients are cared for around
-              the clock. Our night care services are particularly beneficial for
-              those who experience restlessness, require regular assistance, or
-              simply feel more secure knowing someone is there to help during
-              the quiet hours of the night.
-              <br />
-              <br />
-              <br />
-              Noor Home Care is not just about meeting the practical needs of
-              our clients; it’s about building relationships based on trust,
-              empathy, and genuine care. We believe that everyone deserves to
-              feel respected and valued, and our team works tirelessly to create
-              a supportive environment that promotes well-being and happiness.
-              Whether it’s through friendly companionship, attentive assistance,
-              or personalized care plans, Noor Home Care is here to make a
-              difference in the lives of those we serve.
-              <br />
-              <br />
-              <br />
-              Our commitment to excellence at Noor Home Care means we
-              continuously strive to exceed expectations, ensuring that every
-              client receives the highest level of care tailored to their
-              specific needs. By choosing Noor Home Care, you are not just
-              selecting a home care provider; you are partnering with a team
-              that genuinely cares about your health, happiness, and quality of
-              life. With Noor Home Care, you can rest assured that you or your
-              loved one will be supported with compassion and expertise,
-              allowing you to focus on what truly matters: enjoying life to the
-              fullest in the comfort of your own home.
-              <br />
-              <br />
-              <br />
+              Our services are designed to provide the highest level of comfort
+              and support, tailored to your needs.
             </article>
           </div>
         </div>
       </section>
       <section className="2xl:text-[24px] xl:text-[23px] lg:text-[22px]  md:text-[22px] sm:text-[22px] esm:text-[20px] text-center font-bold text-primaryColor my-10">
-        <p>Contact Us</p>
+        <p>For free consultation contact us</p>
       </section>
       <section className="w-full p-10 bg-gradient-to-b from-secondaryColor/40 to-primaryColor flex items-center justify-center">
         <div className="w-[70%] flex flex-row items-center justify-evenly flex-wrap gap-10">
