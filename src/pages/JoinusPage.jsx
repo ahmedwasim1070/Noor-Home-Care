@@ -1,12 +1,22 @@
 import React, { useRef, useState, useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
-import { Resend } from "resend";
 import { Helmet } from "react-helmet";
-const resend = new Resend("re_at2DpLEu_LuR96EP2f2X3GR3PcoXZMQMC");
 
 function JoinusPage() {
   const serviceRef = useRef(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    file: null,
+  });
+  const [errorState, setErrorState] = useState({
+    name: false,
+    email: false,
+    file: false,
+    fileLimit: false,
+    button: false,
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,36 +45,43 @@ function JoinusPage() {
     if (e.target.name === "file") {
       const file = e.target.files[0];
       if (file) {
-        if (file.type === "application/pdf" && file.size <= 500000) {
+        if (file.type === "application/pdf" && file.size <= 999999) {
           setFileName(file.name);
+          setErrorState({
+            ...errorState,
+            [name]: false,
+            [name + "Limit"]: false,
+          });
           convertToBase64(name, file);
         } else {
+          console.log("True");
           setFileName("");
+          setErrorState({
+            ...errorState,
+            [name]: true,
+            [name + "Limit"]: true,
+          });
           setFormData({ ...formData, [name]: null });
         }
       }
     } else {
       setFormData({ ...formData, [name]: value });
+      setErrorState({ ...errorState, [name]: false });
     }
   };
   const convertToBase64 = (name, file) => {
     const reader = new FileReader();
-
-    reader.onloadend = () => {
-      setFormData({ ...formData, [name]: reader.result });
+    reader.onloadend = function (fileLoaded) {
+      let file = fileLoaded.target.result;
+      file = getTextAfterComma(file);
+      setFormData({ ...formData, [name]: file });
     };
     reader.readAsDataURL(file);
   };
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    file: null,
-  });
-  const [errorState, setErrorState] = useState({
-    name: false,
-    email: false,
-    file: false,
-  });
+  const getTextAfterComma = (str) => {
+    const splitText = str.split(",");
+    return splitText.length > 1 ? splitText.slice(1).join(",") : "";
+  };
   const handleInpClick = () => {
     fileInputRef.current.click();
   };
@@ -98,33 +115,27 @@ function JoinusPage() {
     if (!formValid) {
       return;
     }
+    console.log();
 
-    try {
-      await resend.emails.send({
-        from: "noorhomecare.co.uk",
-        to: ["ahmedwasim1070@gmail.com"],
-        subject: "New Job Apply at Home Care by ",
-        html: `${`<p>Name: ${formData.name} </p>
-          <p>Email: ${formData.email} </p>
-          `}`,
-        attachments: [
-          {
-            fileName: "UserCV.pdf",
-            content: formData.file,
-            type: "application/pdf",
-          },
-        ],
+    // Calling serverless backend function
+    fetch(`${import.meta.env.VITE_T0_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(() => {
+        setFormData({
+          name: "",
+          email: "",
+          file: null,
+        });
+        setFileName("");
+      })
+      .catch(() => {
+        setErrorState({ ...errorState, [button]: true });
       });
-      alert("The Message Was sent Sucessfully");
-      setFileName("");
-      setFormData({
-        name: "",
-        email: "",
-        file: null,
-      });
-    } catch (error) {
-      alert("There was error Sending the message plz try again or contact us");
-    }
   };
   return (
     <>
@@ -232,9 +243,9 @@ function JoinusPage() {
         your unique needs.
       </div>
 
-      <section className="2xl:w-[70%] xl:w-[75%] lg:w-[80%] md:w-[88%] sm:w-[95%] esm:w-[95%] mx-auto flex">
+      <section className="2xl:w-[70%] xl:w-[75%] lg:w-[80%] md:w-[88%] sm:w-[95%] esm:w-[95%] my-20 mx-auto flex">
         <div
-          className="w-full bg-primaryColor/80 py-10  px-10 rounded-t-3xl text-white"
+          className="w-full bg-primaryColor/80 py-5  px-10 rounded-3xl text-white"
           action=""
         >
           <div className="text-center">
@@ -318,13 +329,20 @@ function JoinusPage() {
                   required
                 />
                 <p className="text-[12px] font-bold">
-                  PDF only smaller then 500 kb
+                  PDF only smaller then 1 MB
                 </p>
               </div>
             </div>
             {errorState.name || errorState.email || errorState.file ? (
               <div className="text-center mx-auto text-red-400">
-                <p>Fill all the contents first!</p>
+                <p>Fix all the fields first!</p>
+              </div>
+            ) : (
+              ""
+            )}
+            {errorState.fileLimit ? (
+              <div className="text-center mx-auto text-red-400">
+                <p>File should be smaller then 1MB!</p>
               </div>
             ) : (
               ""
@@ -334,7 +352,11 @@ function JoinusPage() {
                 onClick={(e) => {
                   handleSubmit(e);
                 }}
-                className="flex items-center justify-center gap-4 mx-auto py-4 border border-primaryColor mt-10 px-10 rounded-2xl bg-secondaryColor transition-all duration-300 group hover:bg-secondaryColor/40 hover:border-white/70  "
+                className={`flex items-center justify-center gap-4 mx-auto py-4 border border-primaryColor mt-10 px-10 rounded-2xl  transition-all duration-300 group hover:bg-secondaryColor/40 hover:border-white/70  ${
+                  errorState.button
+                    ? "bg-red-500 text-black"
+                    : "bg-secondaryColor"
+                }`}
               >
                 <p className="text-[22px] font-bold">Submit</p>
                 <span>
