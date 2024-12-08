@@ -59,6 +59,7 @@ function home() {
           </div>
           <div className="2xl:w-[65.50%] xl:w-[65.50%] lg:w-[65.50%]  md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px] md:h-[350px] sm:h-[300px] esm:h-[280px] relative md:order-1">
             <img
+              loading="lazy"
               className="w-full h-full  "
               src="nhc-hero.webp"
               alt="Nurse helping old women at Home Care"
@@ -233,6 +234,7 @@ function home() {
           >
             <div className="relative w-full h-[48%] bg-black">
               <img
+                loading="lazy"
                 className="w-full h-full"
                 src="noor-home-care-service-1.webp"
                 alt="Cup in the Bedroom in the Morning"
@@ -259,6 +261,7 @@ function home() {
           >
             <div className="relative w-full h-[48%] bg-black">
               <img
+                loading="lazy"
                 className="w-full h-full"
                 src="noor-home-care-service-2.webp"
                 alt="A hand with Meds in his hand"
@@ -283,6 +286,7 @@ function home() {
           >
             <div className="relative w-full h-[48%] bg-black">
               <img
+                loading="lazy"
                 className="w-full h-full"
                 src="noor-home-care-service-3.webp"
                 alt="Person Pressing Clothes"
@@ -308,6 +312,7 @@ function home() {
           >
             <div className="relative w-full h-[48%] bg-black">
               <img
+                loading="lazy"
                 className="w-full h-full"
                 src="noor-home-care-service-4.webp"
                 alt="Old women coming out of the car"

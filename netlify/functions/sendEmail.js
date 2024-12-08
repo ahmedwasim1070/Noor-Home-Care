@@ -2,9 +2,7 @@ import nodemailer from "nodemailer";
 import { parse } from "querystring";
 import "dotenv/config";
 
-// This function will handle the request to send the email
 export const handler = async (event, context) => {
-  // Only POST requests should be handled
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -12,32 +10,24 @@ export const handler = async (event, context) => {
     };
   }
 
-  console.log();
-
-  // Parse the request body (assuming it's JSON)
   const { name, email, file } = JSON.parse(event.body);
 
-  console.log("Sending email from"); // Ensure this is working
-
-  // Convert the base64 file to a buffer
   const buffer = Buffer.from(file, "base64");
 
-  // Create the transporter for Gmail SMTP
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
     auth: {
-      user: process.env.VITE_EMAIL_USER, // Use your environment variable
-      pass: process.env.VITE_EMAIL_PASS, // Use your environment variable
+      user: process.env.VITE_EMAIL_USER,
+      pass: process.env.VITE_EMAIL_PASS,
     },
   });
 
-  // Compose the email message
   const msg = {
     from: `${email}`,
     to: process.env.VITE_EMAIL_T0,
-    subject: `Some Applied for Job`,
+    subject: `Some One Applied for Job at Noor Home Care`,
     html: `        <table
       width="100%"
       style="
@@ -135,14 +125,12 @@ export const handler = async (event, context) => {
   // Send the email
   try {
     const info = await transporter.sendMail(msg);
-    console.log("Email Sent!", info.response);
 
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "Email Sent Successfully" }),
     };
   } catch (err) {
-    console.error("Error Sending the email:", err);
     return {
       statusCode: 500,
       body: JSON.stringify({

@@ -2,9 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { Helmet } from "react-helmet";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function JoinusPage() {
   const serviceRef = useRef(null);
+  const fileInputRef = useRef();
+  const [fileName, setFileName] = useState("");
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,8 +43,6 @@ function JoinusPage() {
     return () => observer.disconnect();
   }, []);
 
-  const [fileName, setFileName] = useState("");
-  const fileInputRef = useRef();
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (e.target.name === "file") {
@@ -69,6 +72,7 @@ function JoinusPage() {
       setErrorState({ ...errorState, [name]: false });
     }
   };
+
   const convertToBase64 = (name, file) => {
     const reader = new FileReader();
     reader.onloadend = function (fileLoaded) {
@@ -78,13 +82,16 @@ function JoinusPage() {
     };
     reader.readAsDataURL(file);
   };
+
   const getTextAfterComma = (str) => {
     const splitText = str.split(",");
     return splitText.length > 1 ? splitText.slice(1).join(",") : "";
   };
+
   const handleInpClick = () => {
     fileInputRef.current.click();
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -115,27 +122,38 @@ function JoinusPage() {
     if (!formValid) {
       return;
     }
-    console.log();
+    setLoading(true);
 
     // Calling serverless backend function
-    fetch(`${import.meta.env.VITE_T0_URL}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then(() => {
-        setFormData({
-          name: "",
-          email: "",
-          file: null,
-        });
-        setFileName("");
-      })
-      .catch(() => {
-        setErrorState({ ...errorState, [button]: true });
+    try {
+      const response = await fetch(`${import.meta.env.VITE_T0_URL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
+      if (!response.ok) {
+        // Toastify Error Notification
+        setLoading(false);
+        toast.error("Failed ! Try Again Later");
+        throw new Error("Failed to sent message");
+      }
+      toast.success("Your Application Sented Sucessfully!");
+      const data = await response.json();
+      setFormData({
+        name: "",
+        email: "",
+        file: null,
+      });
+      setFileName("");
+      console.log("Email sent successfully:", data);
+      setLoading(false);
+    } catch (error) {
+      toast.error("Failed ! Try Again Later");
+      console.error("Error sending email:", error);
+      setLoading(false);
+    }
   };
   return (
     <>
@@ -144,6 +162,7 @@ function JoinusPage() {
       </Helmet>
       <Header />
       <main className="smothUp fade-in  opacity-0 transition-opacity duration-1000 ease-in-out">
+        <ToastContainer />
         <section className="flex flex-row 2xl:flex-nowrap xl:flex-nowrap lg:flex-nowrap  md:flex-wrap sm:flex-wrap esm:flex-wrap relative">
           <div className="2xl:w-[35.50%] xl:w-[35.50%] lg:w-[35.50%] md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px]  2xl:bg-secondaryColor/50 xl:bg-secondaryColor/50 lg:bg-secondaryColor/50 md:bg-gradient-to-b md:from-secondaryColor/95 md:to-secondaryColor sm:bg-gradient-to-b sm:from-secondaryColor/95 sm:to-secondaryColor esm:bg-gradient-to-b esm:from-secondaryColor/95 esm:to-secondaryColor  2xl:p-20 xl:p-20 lg:p-16 md:p-10 sm:p-10 esm:p-10 2xl:order-1 xl:order-1 lg:order-1 md:order-2 sm:order-2 esm:order-2">
             <div className="text-white w-full 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-[25%] sm:pl-[20%] esm:pl-0 2xl:block xl:block lg:block md:block sm:block  esm:flex esm:justify-center">
@@ -165,6 +184,7 @@ function JoinusPage() {
           </div>
           <div className="2xl:w-[65.50%] xl:w-[65.50%] lg:w-[65.50%]  md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px] md:h-[350px] sm:h-[300px] esm:h-[280px] relative md:order-1">
             <img
+              loading="lazy"
               className="w-full h-full  "
               src="nhc-hero-joinus.webp"
               alt="Group of people joining hands"
@@ -243,7 +263,7 @@ function JoinusPage() {
         your unique needs.
       </div>
 
-      <section className="2xl:w-[70%] xl:w-[75%] lg:w-[80%] md:w-[88%] sm:w-[95%] esm:w-[95%] my-20 mx-auto flex">
+      <section className="2xl:w-[70%] xl:w-[75%] lg:w-[80%] md:w-[88%] sm:w-[95%] esm:w-[95%] my-20 mx-auto flex relative">
         <div
           className="w-full bg-primaryColor/80 py-5  px-10 rounded-3xl text-white"
           action=""
@@ -390,6 +410,11 @@ function JoinusPage() {
             </div>
           </form>
         </div>
+        {loading && (
+          <div className="w-full h-full absolute backdrop-blur-sm top-0 flex justify-center items-center ">
+            <div className="loader"></div>
+          </div>
+        )}
       </section>
       <section className="w-full p-10 bg-gradient-to-b from-primaryColor/70 to-primaryColor flex items-center justify-center">
         <div className="w-[70%] flex flex-row items-center justify-evenly flex-wrap gap-10">

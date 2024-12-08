@@ -53,6 +53,7 @@ function AboutPage() {
           </div>
           <div className="2xl:w-[65.50%] xl:w-[65.50%] lg:w-[65.50%]  md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px] md:h-[350px] sm:h-[300px] esm:h-[280px] relative md:order-1">
             <img
+              loading="lazy"
               className="w-full h-full  "
               src="nhc-hero-about.webp"
               alt="About in writeen with orange background"

@@ -45,29 +45,51 @@
   }
 }
 
-
 @keyframes smothUptransition {
-  0%{
+  0% {
     transform: translateY(2.5rem);
     opacity: 0;
-
   }
-  50%{
+  50% {
     transform: translateY(1.5rem);
     opacity: 50%;
   }
-  100%{
+  100% {
     transform: translateY(0);
     opacity: 100%;
   }
 }
-
 
 .fade-in {
   opacity: 1;
   transition: opacity 0.8s ease-in;
 }
 
-.smothUp{
-  animation: smothUptransition .5s ease-in;
+.smothUp {
+  animation: smothUptransition 0.5s ease-in;
+}
+
+.loader {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+  0% {
+    box-shadow: 20px 0 #000, -20px 0 #0002;
+    background: #000;
+  }
+  33% {
+    box-shadow: 20px 0 #000, -20px 0 #0002;
+    background: #0002;
+  }
+  66% {
+    box-shadow: 20px 0 #0002, -20px 0 #000;
+    background: #0002;
+  }
+  100% {
+    box-shadow: 20px 0 #0002, -20px 0 #000;
+    background: #000;
+  }
 }
