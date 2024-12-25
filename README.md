@@ -2,7 +2,8 @@ Technologies Used:
 
 1. React
 2. Tailwind CSS
-3. Node-Mailer
+3. Netlify-Functoins
+4. Node-Mailer
 
 Build:
 Vite
