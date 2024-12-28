@@ -58,6 +58,7 @@ function header() {
         </div>
         <div className="h-full flex mx-2 items-center 2xl:hiden xl:hidden lg:hidden md:flex sm:flex esm:flex">
           <button
+            name="show-small-navbar"
             onClick={() => setShNavbar(true)}
             className="p-2 rounded-full"
           >
@@ -87,30 +88,38 @@ function header() {
       </div>
       <nav className="w-full h-[45px] bg-primaryColor  items-center justify-center 2xl:flex xl:flex lg:flex md:hidden sm:hidden esm:hidden">
         <ul className="2xl:w-[40%] xl:w-[42%] lg:w-[45%] h-full flex items-center justify-evenly flex-row text-white text-[20px] ">
-          <Link
-            to="/"
-            className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
-          >
-            <li>Home</li>
-          </Link>
-          <Link
-            to="/about"
-            className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
-          >
-            <li>About Us</li>
-          </Link>
-          <Link
-            to="/services"
-            className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
-          >
-            <li>Services</li>
-          </Link>
-          <Link
-            to="/join-us"
-            className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
-          >
-            <li>Join Us</li>
-          </Link>
+          <li>
+            <Link
+              to="/"
+              className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/services"
+              className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
+            >
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/join-us"
+              className="transition-all duration-75 p-2 hover:bg-white hover:text-primaryColor cursor-pointer"
+            >
+              Join Us
+            </Link>
+          </li>
         </ul>
       </nav>
 
@@ -121,6 +130,7 @@ function header() {
       >
         <div className="w-full flex justify-end px-3 py-4  ">
           <button
+            name="close-small-navbar"
             onClick={() => setShNavbar(false)}
             className="p-2 bg-secondaryColor border border-secondaryColor hover:border-white  rounded-full group hover:bg-transparent transition-all duration-300"
           >

@@ -184,10 +184,9 @@ function JoinusPage() {
           </div>
           <div className="2xl:w-[65.50%] xl:w-[65.50%] lg:w-[65.50%]  md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px] md:h-[350px] sm:h-[300px] esm:h-[280px] relative md:order-1">
             <img
-              loading="lazy"
               className="w-full h-full  "
               src="nhc-hero-joinus.webp"
-              alt="Group of people joining hands"
+              alt="At Noor home care group of people joining hands"
             />
             <div className=" absolute inset-0 w-full h-full 2xl:bg-primaryColor xl:bg-primaryColor lg:bg-primaryColor 2xl:opacity-[30%] xl:opacity-[30%] lg:opacity-[30%] md:bg-gradient-to-b md:from-white/10 md:to-primaryColor/95 sm:bg-gradient-to-b sm:from-white/10 sm:to-primaryColor/95 esm:bg-gradient-to-b esm: esm:from-white/5 esm:to-primaryColor/95"></div>
           </div>
@@ -369,6 +368,7 @@ function JoinusPage() {
             )}
             <div className="">
               <button
+                name="submit"
                 onClick={(e) => {
                   handleSubmit(e);
                 }}
