@@ -59,7 +59,8 @@ function home() {
           </div>
           <div className="2xl:w-[65.50%] xl:w-[65.50%] lg:w-[65.50%]  md:w-full sm:w-full esm:w-full 2xl:h-[600px] xl:h-[550px] lg:h-[500px] md:h-[350px] sm:h-[300px] esm:h-[280px] relative md:order-1">
             <img
-              className="w-full h-full  "
+              fetchpriority="high"
+              className="w-full h-full"
               src="nhc-hero.webp"
               alt="At Noor home care nurse helping old women at Home Care"
             />

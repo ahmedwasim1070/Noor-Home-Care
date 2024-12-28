@@ -28,6 +28,7 @@ function header() {
           </div>
           <div className="2xl:mx-5 xl:mx-5 lg:mx-5 md:mx-4 sm:mx-4 esm:mx-2">
             <img
+              fetchpriority="high"
               className="2xl:w-[85px] 2xl:h-[80px] xl:[80px] xl:[75px] lg:w-[87px] lg:h-[87px] md:w-[81px] md:h-[81px] sm:w-[77px] sm:h-[77px] esm:w-[75px] esm:h-[75px]"
               src="logo-main.svg"
               alt="Noor Home Care Logo"
