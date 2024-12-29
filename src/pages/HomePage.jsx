@@ -198,17 +198,17 @@ function home() {
             </h3>
           </div>
         </div>
-        <div className="w-full flex justify-center">
-          <div className="2xl:w-[900px] xl:w-[850px] lg:w-[750px] md:w-[80%] sm:w-[80%] esm:w-[80%] h-[80px] bg-primaryColor rounded-[5px] flex items-center justify-center my-10">
-            <p className=" text-white  font-bold 2xl:text-[36px] xl:text-[36px] lg:text-[36px] md:text-[36px] sm:text-[32px] esm:text-[30px]">
-              What We Offer
-            </p>
-          </div>
-        </div>
       </section>
+      <div className="w-full flex justify-center">
+        <div className="2xl:w-[900px] xl:w-[850px] lg:w-[750px] md:w-[80%] sm:w-[80%] esm:w-[80%] h-[80px] bg-primaryColor rounded-t-[5px] flex items-center justify-center">
+          <p className=" text-white  font-bold 2xl:text-[36px] xl:text-[36px] lg:text-[36px] md:text-[36px] sm:text-[32px] esm:text-[30px]">
+            What We Offer
+          </p>
+        </div>
+      </div>
       <div
         ref={servicesRef}
-        className="w-full h-full flex items-center 2xl:my-40 xl:my-40 lg:my-40 md:my-40 sm:my-20 esm:my-16 justify-center smothUp opacity-0 transition-opacity duration-1000 ease-in-out"
+        className="w-full h-full flex items-center 2xl:mb-40 xl:mb-40 lg:mb-40 md:mb-40 sm:mb-20 esm:mb-16 justify-center smothUp opacity-0 transition-opacity duration-1000 ease-in-out"
       >
         <div className="2xl:container xl:container lg:container md:container sm:container-none esm:container-none 2xl:mx-auto xl:mx-10 lg:mx-auto md:mx-auto sm:mx-10 esm:mx-2 2xl:p-10 xl:p-16 lg:p-10 md:p-10 sm:p-8 esm:p-4 bg-[#C5FFF8] rounded-2xl flex flex-row items-center justify-center overflow-x-hidden  gap-10 gap-y-20 border-black shadow-2xl shadow-primaryColor flex-wrap">
           <div className="bg-primaryColor rounded-[10px] shadow-primaryColor shadow-2xl flex flex-col 2xl:p-10 xl:p-10 lg:p-10 md:p-10 sm:p-10 esm:p-6 gap-y-10">
